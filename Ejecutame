@@ -1,6 +1,3 @@
 #!/bin/bash
 
-zenity --calendar
 
-cd /home/administrador/Escritorio
-sudo echo "funciona" >> funcionó.
