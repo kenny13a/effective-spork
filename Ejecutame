@@ -3,4 +3,4 @@
 #/opt/conejo-blanco/effective-spork
 #/usr/bin/conejo-blanco
 
-./Sistema/usuarios/estadistica
+./opt/conejo-blanco/effective-spork/Sistema/usuarios/estadistica
