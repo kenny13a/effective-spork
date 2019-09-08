@@ -1,3 +1,6 @@
 #!/bin/bash
 
+#/opt/conejo-blanco/effective-spork
+#/usr/bin/conejo-blanco
 
+./Sistema/usuarios/estadistica
