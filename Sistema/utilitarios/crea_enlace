@@ -1,0 +1,18 @@
+#!/bin/bash
+echo "Credor de enlaces"
+if [ -z "$1" ] && [ -z "$2" ]
+    then
+        echo "Incorrecto, intente:"
+        echo "  sudo crea_enlace "usuario" "programa""
+    else
+        echo "usted eligió crear el enlace a $2"
+   	        if [ ! -d /home/$1/Escritorio/ ];
+                then
+                    sudo mkdir /home/$1/Escritorio
+                    sudo chown $1 /home/$1/Escritorio
+                    sudo chgrp $1 /home/$1/Escritorio
+                fi 
+        sudo cp "$2.desktop" /home/$1/Escritorio
+        sudo chmod 755 /home/$1/Escritorio/$2.desktop
+        echo "Acceso directo de $2 copiado al escritorio de $1"
+fi

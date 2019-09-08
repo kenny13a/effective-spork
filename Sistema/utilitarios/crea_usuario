@@ -1,0 +1,38 @@
+#!/bin/bash
+function seguridad_usuario () {
+	echo "+++Hello $1"
+	echo "+++Arreglando la seguridad de la carpeta compartida del usuario $1"
+
+    # sudo chmod -R -v 770 /home/$1
+    sudo chmod -v 770 /home/$1
+}
+
+# agrega "usuario" "contraseña"
+function agrega () {
+	echo "Hello $1"
+	echo "Agregando usuario $1"
+	sudo useradd -m -d /home/$1 $1 -s /bin/bash
+	echo "usuario $1 y contraseña $2"
+	echo $1:$2 | chpasswd
+	sudo adduser $1 materias
+}
+
+
+### Inicio de programa
+echo "Creador de usuarios"
+if [ -z "$1" ] && [ -z "$2" ]
+    then
+        echo "Incorrecto, intente:"
+        echo "  sudo crea_usuario "usuario" "contraseña""
+    else
+
+        agrega "$1" "$2"
+        seguridad_usuario "$1"
+
+
+        echo "Eliminando: ubuntu-mate-welcome-autostart.desktop"
+        sudo rm /etc/xdg/autostart/ubuntu-mate-welcome-autostart.desktop
+        echo "Eliminando: update-notifier.desktop"
+        sudo rm /etc/xdg/autostart/update-notifier.desktop
+
+fi
