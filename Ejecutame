@@ -6,4 +6,4 @@
 #cd /opt/conejo-blanco/effective-spork/Sistema/usuarios
 #./estadistica
 
-#zenity --calendar
+zenity --calendar
