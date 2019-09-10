@@ -1,0 +1,9 @@
+#!/bin/bash
+
+#/opt/conejo-blanco/effective-spork
+#/usr/bin/conejo-blanco
+
+#cd /opt/conejo-blanco/effective-spork/Sistema/usuarios
+#./estadistica
+
+#zenity --calendar
