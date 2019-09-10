@@ -1,0 +1,24 @@
+#!/bin/bash
+
+s_escritorio () {
+    sudo chmod -v 770 /home/$1/Escritorio
+}
+
+#s_escritorio ""
+
+
+
+s_escritorio "objetos-1-tarde"
+s_escritorio "objetos-1-noche"
+s_escritorio "objetos-2"
+s_escritorio "nuevos-entornos"
+s_escritorio "intro-prog"
+s_escritorio "redes"
+# "base-datos" "Bd234N"
+s_escritorio "biotecnologia"
+s_escritorio "org-comp"
+s_escritorio "sist-operativos"
+s_escritorio "estruc-datos"
+s_escritorio "interfaces-usuario"
+s_escritorio "persistencia"
+s_escritorio "algebra-1"
