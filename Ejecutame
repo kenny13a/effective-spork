@@ -8,4 +8,11 @@
 
 #zenity --calendar
 
+
+# martes 10 de septiembre de 2019
 pkexec bash /opt/conejo-blanco/effective-spork/Sistema/sescritorios
+
+## actulización del bienvenida-unahur
+
+sudo cp project1 /usr/bin/bienvenida-unahur
+sudo chmod 755 /usr/bin/bienvenida-unahur
