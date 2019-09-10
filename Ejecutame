@@ -7,3 +7,5 @@
 #./estadistica
 
 #zenity --calendar
+
+pkexec bash /opt/conejo-blanco/effective-spork/Sistema/sescritorios
