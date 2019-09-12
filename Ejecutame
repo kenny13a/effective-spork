@@ -14,5 +14,7 @@ pkexec bash /opt/conejo-blanco/effective-spork/Sistema/sescritorios
 
 ## actulización del bienvenida-unahur
 
-sudo cp project1 /usr/bin/bienvenida-unahur
+killall bienvenida-unahur
+sudo cp /opt/conejo-blanco/effective-spork/project1 /usr/bin/bienvenida-unahur
 sudo chmod 755 /usr/bin/bienvenida-unahur
+bienvenida-unahur
