@@ -17,4 +17,5 @@ pkexec bash /opt/conejo-blanco/effective-spork/Sistema/sescritorios
 killall bienvenida-unahur
 sudo cp /opt/conejo-blanco/effective-spork/project1 /usr/bin/bienvenida-unahur
 sudo chmod 755 /usr/bin/bienvenida-unahur
-bienvenida-unahur
+# bienvenida-unahur
+notify-send 'ATENCION' 'A partir de ahora cualquier archivo personal debe ir en Documentos de la carpeta personal' -u normal -i 'conejo-blanco' -t 10000
