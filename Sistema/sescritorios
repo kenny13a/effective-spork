@@ -1,6 +1,12 @@
 #!/bin/bash
 
 s_escritorio () {
+   if [ ! -d /home/$1/Escritorio/ ];
+       then
+          sudo mkdir /home/$1/Escritorio
+          sudo chown $1 /home/$1/Escritorio
+          sudo chgrp $1 /home/$1/Escritorio
+    fi
     sudo chmod -v 555 /home/$1/Escritorio
 }
 
