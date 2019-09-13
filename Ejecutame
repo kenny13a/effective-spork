@@ -3,11 +3,27 @@
 #/opt/conejo-blanco/effective-spork
 #/usr/bin/conejo-blanco
 
-#cd /opt/conejo-blanco/effective-spork/Sistema/usuarios
-#./estadistica
+source /opt/conejo-blanco/effective-spork/utiles.sh
 
-#zenity --calendar
-
+# chequeo usuarios
+existeuservf "algebra-1"
+existeuservf "base-datos"
+existeuservf "estadistica"
+existeuservf "persistencia"
+existeuservf "estruc-datos"
+existeuservf "interfaces-usuario"
+existeuservf "intro-prog"
+existeuservf "nuevos-entornos"
+existeuservf "objetos-1-noche"
+existeuservf "objetos-1-tarde"
+existeuservf "objetos-2"
+existeuservf "org-comp"
+existeuservf "redes"
+existeuservf "sist-operativos"
+existeuservf "ing-software"
+existeuservf "arduino"
+existeuservf "bioinformatica"
+existeuservf "biotecnologia"
 
 # martes 10 de septiembre de 2019
 notify-send 'ATENCION' 'A partir de ahora cualquier archivo personal debe ir en Documentos de la carpeta personal' -u normal -i 'conejo-blanco' -t 10000
@@ -18,3 +34,8 @@ killall bienvenida-unahur
 sudo cp /opt/conejo-blanco/effective-spork/project1 /usr/bin/bienvenida-unahur
 sudo chmod 755 /usr/bin/bienvenida-unahur
 # bienvenida-unahur
+
+#chequeo de programas de usuario
+
+pkexec bash /opt/conejo-blanco/effective-spork/Materias/Programas/$USER
+
