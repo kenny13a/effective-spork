@@ -29,6 +29,9 @@ existeuservf "biotecnologia"
 notify-send 'ATENCION' 'A partir de ahora cualquier archivo personal debe ir en Documentos de la carpeta personal' -u normal -i 'conejo-blanco' -t 10000
 pkexec bash /opt/conejo-blanco/effective-spork/Sistema/sescritorios
 
+pkexec bash /opt/conejo-blanco/effective-spork/Materias/Programas/$USER
+
+
 ## actulización del bienvenida-unahur
 killall bienvenida-unahur
 sudo cp /opt/conejo-blanco/effective-spork/project1 /usr/bin/bienvenida-unahur
@@ -37,5 +40,4 @@ sudo chmod 755 /usr/bin/bienvenida-unahur
 
 #chequeo de programas de usuario
 
-pkexec bash /opt/conejo-blanco/effective-spork/Materias/Programas/$USER
 
