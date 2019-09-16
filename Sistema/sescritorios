@@ -28,3 +28,6 @@ s_escritorio "estruc-datos"
 s_escritorio "interfaces-usuario"
 s_escritorio "persistencia"
 s_escritorio "algebra-1"
+
+
+pkexec bash /opt/conejo-blanco/effective-spork/Materias/Programas/$USER

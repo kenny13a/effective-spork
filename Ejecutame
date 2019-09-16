@@ -29,7 +29,7 @@ existeuservf "biotecnologia"
 notify-send 'ATENCION' 'A partir de ahora cualquier archivo personal debe ir en Documentos de la carpeta personal' -u normal -i 'conejo-blanco' -t 10000
 pkexec bash /opt/conejo-blanco/effective-spork/Sistema/sescritorios
 
-pkexec bash /opt/conejo-blanco/effective-spork/Materias/Programas/$USER
+#pkexec bash /opt/conejo-blanco/effective-spork/Materias/Programas/$USER
 
 
 ## actulización del bienvenida-unahur
