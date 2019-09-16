@@ -1,3 +1,9 @@
 #!/bin/bash
 
 echo "Instalaciónd e programas para la materia"
+if [[ $UID != 0 ]]; then
+        echo "No es administrador"
+exit 1
+else
+    sudo adduser redes wireshark
+fi
