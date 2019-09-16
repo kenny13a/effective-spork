@@ -6,5 +6,5 @@ if [[ $UID != 0 ]]; then
 exit 1
 else
     echo "Instalaciónd e programas para la materia"
-    sudo apt-get install geogebra-classic
+    sudo apt-get install geogebra-gnome
 fi
