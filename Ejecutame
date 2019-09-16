@@ -40,4 +40,7 @@ sudo chmod 755 /usr/bin/bienvenida-unahur
 
 #chequeo de programas de usuario
 
-
+if [ $USER = "algebra-1" ]
+then
+sudo apt-get install geogebra-classic
+fi
