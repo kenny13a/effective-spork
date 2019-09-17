@@ -3,16 +3,27 @@ echo "Credor de enlaces"
 if [ -z "$1" ] && [ -z "$2" ]
     then
         echo "Incorrecto, intente:"
-        echo "  sudo crea_enlace "usuario" "programa""
+        echo "  sudo crea_enlace "usuario" "programa" "ICONO""
     else
-        echo "usted eligió crear el enlace a $2"
+        echo "crear enlace a $2"
    	        if [ ! -d /home/$1/Escritorio/ ];
                 then
                     sudo mkdir /home/$1/Escritorio
                     sudo chown $1 /home/$1/Escritorio
                     sudo chgrp $1 /home/$1/Escritorio
                 fi 
-        sudo cp "$2.desktop" /home/$1/Escritorio
+#        sudo cp "$2.desktop" /home/$1/Escritorio
+        ## INICIO del archivo .desktop
+        sudo echo "#!/usr/bin/env xdg-open" >> /home/$1/Escritorio/$2.desktop
+        sudo echo "[Desktop Entry]" >> /home/$1/Escritorio/$2.desktop
+        sudo echo "Version=1.0" >> /home/$1/Escritorio/$2.desktop
+        sudo echo "Type=Application" >> /home/$1/Escritorio/$2.desktop
+        sudo echo "Terminal=false" >> /home/$1/Escritorio/$2.desktop
+        sudo echo "Icon=$3" >> /home/$1/Escritorio/$2.desktop
+        sudo echo "Exec=$2" >> /home/$1/Escritorio/$2.desktop
+        sudo echo "Name[es_AR]=$2" >> /home/$1/Escritorio/$2.desktop
+        sudo echo "Name=$2" >> /home/$1/Escritorio/$2.desktop
+        ## fin del archivo .desktop
         sudo chmod 755 /home/$1/Escritorio/$2.desktop
         echo "Acceso directo de $2 copiado al escritorio de $1"
 fi
