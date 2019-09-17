@@ -1,3 +1,15 @@
 #!/bin/bash
 
 echo "Instalaciónd e programas para la materia"
+if [[ $UID != 0 ]]; then
+        echo "No es administrador"
+exit 1
+else
+    which q4wine >/dev/null
+    if [ "$?" = "0" ]; then
+	    echo "├─Geogebra:  $(tput setaf 2)OK$(tput sgr 0)"
+    else
+        echo "Instalaciónd e programas para la materia"
+        sudo apt-get -y install q4wine
+    fi
+fi
