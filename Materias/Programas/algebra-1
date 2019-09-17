@@ -5,11 +5,12 @@ if [[ $UID != 0 ]]; then
         echo "No es administrador"
 exit 1
 else
-    which geogebra-classic >/dev/null
+    which geogebra >/dev/null
     if [ "$?" = "0" ]; then
 	    echo "├─Geogebra:  $(tput setaf 2)OK$(tput sgr 0)"
     else
         echo "Instalaciónd e programas para la materia"
         sudo apt-get -y install geogebra-gnome
+	pkexec bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "algebra-1" "geogebra" "geogebra"
     fi
 fi
