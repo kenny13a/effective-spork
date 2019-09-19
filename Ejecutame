@@ -5,6 +5,7 @@
 
 source /opt/conejo-blanco/effective-spork/utiles.sh
 
+sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/administrador
 # chequeo usuarios
 existeuservf "algebra-1"
 existeuservf "base-datos"

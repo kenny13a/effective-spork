@@ -84,3 +84,7 @@ fi
 function cheq_mat_progs(){
     pkexec bash /opt/conejo-blanco/effective-sport/Materias/Programas/$1
 }
+
+function cambia_contra(){
+    echo $1:$2 | chpasswd
+}
