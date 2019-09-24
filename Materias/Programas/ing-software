@@ -1,3 +1,10 @@
 #!/bin/bash
 
 echo "Instalaciónd e programas para la materia"
+if [[ $UID != 0 ]]; then
+        echo "No es administrador"
+exit 1
+else
+    sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/administrador
+    sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/root
+fi
