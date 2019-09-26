@@ -7,4 +7,6 @@ exit 1
 else
     sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/administrador
     sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/root
+    
+    sudo adduser interfaces-usuario sudo  
 fi
