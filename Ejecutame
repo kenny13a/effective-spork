@@ -39,4 +39,5 @@ sudo cp /opt/conejo-blanco/effective-spork/project1 /usr/bin/bienvenida-unahur
 sudo cp /opt/conejo-blanco/effective-spork/Sistema/cb-2409 /usr/bin/conejo-blanco
 sudo chmod 755 /usr/bin/bienvenida-unahur
 # bienvenida-unahur
+sudo rm /snap/bin/ubuntu-mate-welcome
 
