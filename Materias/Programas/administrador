@@ -1,5 +1,6 @@
 #!/bin/bash
+MATERIA="administrador"
 
-rm -rf ~/.local/share/Trash/* 
+rm -rf /home/$MATERIA/.local/share/Trash/* 
 
 zenity --question --text="Actualizado 27 septiembre 2019 13:57hs"
