@@ -1,5 +1,9 @@
 #!/bin/bash
 
+MATERIA="org-comp"
+
+rm -rf /home/$MATERIA/.local/share/Trash/* 
+
 echo "Instalaciónd e programas para la materia"
 if [[ $UID != 0 ]]; then
         echo "No es administrador"
