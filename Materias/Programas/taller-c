@@ -1,0 +1,30 @@
+#!/bin/bash
+MATERIA="taller-c"
+
+rm -rf /home/$MATERIA/.local/share/Trash/* 
+
+echo "Instalaciónd e programas para la materia"
+if [[ $UID != 0 ]]; then
+        echo "No es administrador"
+exit 1
+else
+    sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/administrador
+    sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/root
+    which dotnet >/dev/null
+    if [ "$?" = "0" ]; then
+	    echo "├─Dotnet:  $(tput setaf 2)OK$(tput sgr 0)"
+    else
+        echo "Instalaciónd e programas para la materia"
+#        sudo apt-get -y install geogebra-gnome
+#	pkexec bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "algebra-1" "geogebra" "geogebra"
+    sudo mkdir /opt/conejo-blanco/Descargas
+    sudo wget https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O /opt/conejo-blanco/Descargas/packages-microsoft-prod.deb
+    sudo dpkg -i /opt/conejo-blanco/Descargas/packages-microsoft-prod.deb
+
+    sudo add-apt-repository universe
+    sudo apt-get update
+    sudo apt-get install apt-transport-https
+    sudo apt-get update
+    sudo apt-get install dotnet-sdk-3.0
+    fi
+fi
