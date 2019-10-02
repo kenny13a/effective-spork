@@ -17,4 +17,11 @@ else
         echo "Instalaciónd e programas para la materia"
         sudo apt-get -y install q4wine
     fi
+    echo "┌──Estructuras de persistencia───╸"
+    if [ -f /opt/lampp/manager-linux-x64.run ];
+    then
+        echo "├─XAMPP: $(tput setaf 2)OK$(tput sgr 0)"
+    else
+        echo "├─XAMPP: $(tput setaf 1)NO$(tput sgr 0)"
+    fi
 fi
