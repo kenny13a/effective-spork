@@ -88,3 +88,53 @@ function cheq_mat_progs(){
 function cambia_contra(){
     echo $1:$2 | chpasswd
 }
+
+function descargar_logosvf(){
+if [ ! -f /usr/share/backgrounds/Logo.jpg ];
+then
+    sudo wget https://www.dropbox.com/s/8dca3e83fl7xq6b/logo3.png -O /usr/share/backgrounds/logo3.png
+    sudo chmod 755 /usr/share/backgrounds/logo3.png
+    sudo wget https://www.dropbox.com/s/p2bzjph16bt06b7/Logo.jpg -O /usr/share/backgrounds/Logo.jpg
+    sudo chmod 755 /usr/share/backgrounds/Logo.jpg
+fi
+}
+
+function crea_autoejecutablevf(){
+if [ ! -f /etc/xdg/autostart/$1.desktop ];
+then
+    echo "Escribiendo el archivo: $1.desktop"
+    echo "[Desktop Entry]" >> /etc/xdg/autostart/$1.desktop
+    echo "Type=Application" >> /etc/xdg/autostart/$1.desktop
+    echo "Exec=$2" >> /etc/xdg/autostart/$1.desktop
+    echo "X-MATE-Autostart-enabled=true" >> /etc/xdg/autostart/$1.desktop
+    echo "Name[es_AR]=$1" >> /etc/xdg/autostart/$1.desktop
+    echo "Name=$1" >> /etc/xdg/autostart/$1.desktop
+	echo "Comment[es_AR]=$1" >> /etc/xdg/autostart/$1.desktop
+	echo "Comment=$1" >> /etc/xdg/autostart/$1.desktop
+    sudo chown root /etc/xdg/autostart/$1.desktop
+    sudo chmod 644 /etc/xdg/autostart/$1.desktop
+fi
+}
+
+function protector_pantallavf(){
+if [ ! -f /usr/share/pixmaps/UNAHUR-logo.svg ];
+then
+    sudo wget https://www.dropbox.com/s/x2cnfldgj8jovu3/UNAHUR-logo.svg -O /usr/share/pixmaps/UNAHUR-logo.svg
+    sudo wget https://www.dropbox.com/s/kvqpark2i5f06tm/footlogo-floaters.desktop -O /usr/share/applications/screensavers/footlogo-floaters.desktop
+fi
+}
+
+function montar_fstabvf(){
+if [ ! -f /media/$3 ];
+then
+    if [ -f /dev/$1 ];
+    then
+        sudo mkdir /media/$3
+        sudo chmod 777 /media/$3
+        sudo echo "" >> /etc/fstab
+        sudo echo "# Montar partición $3.  santiago.maydana@unahur.edu.ar" >> /etc/fstab
+        sudo echo "/dev/$1 /media/$3 $2 users,permissions,auto 0 0" >> /etc/fstab
+    fi
+fi
+}
+
