@@ -16,5 +16,10 @@ else
         echo "├─XAMPP: $(tput setaf 2)OK$(tput sgr 0)"
     else
         echo "├─XAMPP: $(tput setaf 1)NO$(tput sgr 0)"
+        sudo wget https://www.dropbox.com/s/ovd3mtx7ukevts1/com.ubuntu.pkexec.xampp.policy -O /usr/share/polkit-1/actions/com.ubuntu.pkexec.xampp.policy
+        sudo wget https://www.apachefriends.org/xampp-files/7.2.6/xampp-linux-x64-7.2.6-0-installer.run -O /opt/conejo-blanco/Descargas/xampp-linux-x64-7.2.6-0-installer.run
+        sudo chmod +x /opt/conejo-blanco/Descargas/xampp-linux-x64-7.2.6-0-installer.run
+        sudo /opt/conejo-blanco/Descargas/xampp-linux-x64-7.2.6-0-installer.run
+        sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace $MATERIA XAMPP "/opt/lampp/htdocs/favicon.ico" "pkexec /opt/lampp/manager-linux-x64.run"
     fi
 fi

@@ -11,5 +11,5 @@ else
     sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/administrador
     sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/root
     
-    sudo adduser interfaces-usuario sudo  
+    sudo adduser $MATERIA sudo  
 fi

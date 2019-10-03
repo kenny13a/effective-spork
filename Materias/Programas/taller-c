@@ -15,9 +15,7 @@ else
 	    echo "├─Dotnet:  $(tput setaf 2)OK$(tput sgr 0)"
     else
         echo "Instalaciónd e programas para la materia"
-#       sudo apt-get -y install geogebra-gnome
-#	    pkexec bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "algebra-1" "geogebra" "geogebra"
-        sudo mkdir /opt/conejo-blanco/Descargas
+#        sudo mkdir /opt/conejo-blanco/Descargas
         sudo wget https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O /opt/conejo-blanco/Descargas/packages-microsoft-prod.deb
         sudo dpkg -i /opt/conejo-blanco/Descargas/packages-microsoft-prod.deb
         if [ "$?" = "0" ]; then

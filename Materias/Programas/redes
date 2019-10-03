@@ -10,6 +10,6 @@ exit 1
 else
     sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/administrador
     sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/root
-#    sudo adduser redes wireshark
- sudo adduser redes sudo   
+#    sudo adduser $MATERIA wireshark
+ sudo adduser $MATERIA sudo   
 fi

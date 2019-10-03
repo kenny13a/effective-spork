@@ -3,7 +3,8 @@ echo "Credor de enlaces"
 if [ -z "$1" ] && [ -z "$2" ]
     then
         echo "Incorrecto, intente:"
-        echo "  sudo crea_enlace "usuario" "programa" "ICONO""
+        echo "  sudo crea_enlace "usuario" "programa" "ICONO" "EXEC""
+        #                           $1          $2       $3      $4
     else
         echo "crear enlace a $2"
    	        if [ ! -d /home/$1/Escritorio/ ];
@@ -20,7 +21,7 @@ if [ -z "$1" ] && [ -z "$2" ]
         sudo echo "Type=Application" >> /home/$1/Escritorio/$2.desktop
         sudo echo "Terminal=false" >> /home/$1/Escritorio/$2.desktop
         sudo echo "Icon=$3" >> /home/$1/Escritorio/$2.desktop
-        sudo echo "Exec=$2" >> /home/$1/Escritorio/$2.desktop
+        sudo echo "Exec=$4" >> /home/$1/Escritorio/$2.desktop
         sudo echo "Name[es_AR]=$2" >> /home/$1/Escritorio/$2.desktop
         sudo echo "Name=$2" >> /home/$1/Escritorio/$2.desktop
         ## fin del archivo .desktop
