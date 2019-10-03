@@ -10,6 +10,7 @@ exit 1
 else
     sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/administrador
     sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/root
+    sudo adduser $MATERIA sudo
     echo "┌──Estructuras de persistencia───╸"
     if [ -f /opt/lampp/manager-linux-x64.run ];
     then
