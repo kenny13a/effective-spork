@@ -10,4 +10,20 @@ exit 1
 else
     sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/administrador
     sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/root
+    echo "┌──Estructura de datos───╸"
+    which eclipse >/dev/null
+    if [ "$?" = "0" ]; then
+	    echo "├─Eclipse:  $(tput setaf 2)OK$(tput sgr 0)"
+    else
+        echo "├─Eclipse: $(tput setaf 1)NO$(tput sgr 0)"
+        sudo snap install --classic eclipse
+        pkexec bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace $MATERIA "eclipse_eclipse" "/snap/eclipse/40/icon.xpm" "env BAMF_DESKTOP_FILE_HINT=/var/lib/snapd/desktop/applications/eclipse_eclipse.desktop /snap/bin/eclipse %U"
+    fi
+    if [ -f /home/estruc-datos/anaconda3/bin/anaconda-navigator ];
+    then
+        echo "├─Anaconda: $(tput setaf 2)OK$(tput sgr 0)"
+    else
+        echo "├─Anaconda: $(tput setaf 1)NO$(tput sgr 0)"
+    fi
+    echo "└────────────────────────╸"
 fi
