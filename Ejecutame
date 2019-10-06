@@ -49,4 +49,5 @@ crea_autoejecutablevf protector "gsettings reset-recursively org.mate.screensave
 protector_pantallavf
 montar_fstabvf "sda3" "ntfs-3g" "DATOS"
 sudo mkdir /opt/conejo-blanco/Descargas
+sudo sed -i '16,$d' /etc/crontab
 
