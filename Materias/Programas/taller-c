@@ -29,4 +29,13 @@ else
                 systemctl reboot    
         fi
     fi
+    which code >/dev/null
+    if [ "$?" = "0" ]; then
+    	echo "├─Code Studio:  $(tput setaf 2)OK$(tput sgr 0)"
+    else
+        echo "├─Code Studio: $(tput setaf 1)NO$(tput sgr 0)"
+        sudo wget https://az764295.vo.msecnd.net/stable/c7d83e57cd18f18026a8162d042843bda1bcf21f/code_1.35.1-1560350270_amd64.deb -O /opt/conejo-blanco/Descargas/code_1.35.1-1560350270_amd64.deb
+        sudo dpkg -i /opt/conejo-blanco/Descargas/code_1.35.1-1560350270_amd64.deb
+        sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "code" "com.visualstudio.code" "/usr/share/code/code --unity-launch %F"
+    fi
 fi
