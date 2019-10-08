@@ -2,6 +2,7 @@
 MATERIA="estadistica"
 
 rm -rf /home/$MATERIA/.local/share/Trash/* 
+#find /home/$MATERIA/Escritorio/* -user $MATERIA -exec rm -rf {} \;
 
 echo "Instalaciónd e programas para la materia"
 if [[ $UID != 0 ]]; then
@@ -12,7 +13,7 @@ else
     sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/root
     which q4wine >/dev/null
     if [ "$?" = "0" ]; then
-	    echo "├─Geogebra:  $(tput setaf 2)OK$(tput sgr 0)"
+	    echo "├─Q4Wine:  $(tput setaf 2)OK$(tput sgr 0)"
     else
         echo "Instalaciónd e programas para la materia"
         sudo apt-get -y install q4wine
