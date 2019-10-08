@@ -2,7 +2,8 @@
 
 MATERIA="org-comp"
 
-rm -rf /home/$MATERIA/.local/share/Trash/* 
+rm -rf /home/$MATERIA/.local/share/Trash/*
+find /home/$MATERIA/Escritorio/* -user $MATERIA -exec rm -rf {} \;
 
 echo "Instalaciónd e programas para la materia"
 if [[ $UID != 0 ]]; then
