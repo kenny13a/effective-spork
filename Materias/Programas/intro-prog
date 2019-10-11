@@ -25,7 +25,7 @@ else
 	    echo "├─Thonny:  $(tput setaf 2)OK$(tput sgr 0)"
     else
         echo "├─Thonny: $(tput setaf 1)NO$(tput sgr 0)"
-        sudo apt-get install thonny
+        sudo apt-get -y install thonny
     fi
     if [ -f /home/intro-prog/pseint/wxPSeInt ];
     then
