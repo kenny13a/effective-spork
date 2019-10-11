@@ -11,4 +11,41 @@ exit 1
 else
     sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/administrador
     sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/root
+    echo "┌──Intro-prog───╸"
+    which google-chrome-stable >/dev/null
+    if [ "$?" = "0" ]; then
+    	echo "├─Chrome:  $(tput setaf 2)OK$(tput sgr 0)"
+    else
+        echo "├─Chrome: $(tput setaf 1)NO$(tput sgr 0)"
+        sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O /opt/conejo-blanco/Descargas/google-chrome-stable_current_amd64.deb
+        sudo dpkg -i /opt/conejo-blanco/Descargas/google-chrome-stable_current_amd64.deb
+    fi
+    which thonny >/dev/null
+    if [ "$?" = "0" ]; then
+	    echo "├─Thonny:  $(tput setaf 2)OK$(tput sgr 0)"
+    else
+        echo "├─Thonny: $(tput setaf 1)NO$(tput sgr 0)"
+        sudo apt-get install thonny
+    fi
+    if [ -f /home/intro-prog/pseint/wxPSeInt ];
+    then
+        echo "├─PSeInt: $(tput setaf 2)OK$(tput sgr 0)"
+    else
+        echo "├─PSeInt: $(tput setaf 1)NO$(tput sgr 0)"
+        sudo wget https://razaoinfo.dl.sourceforge.net/project/pseint/20190311/pseint-l64-20190311.tgz -O /opt/conejo-blanco/Descargas/pseint-l64-20190311.tgz
+        sudo tar xvzf /opt/conejo-blanco/Descargas/pseint-l64-20190311.tgz -C /home/intro-prog
+        sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace $MATERIA "PSeInt" "/home/intro-prog/pseint/imgs/logo.png" "/home/intro-prog/pseint/wxPSeInt"
+    fi
+    echo "└────────────────────────╸"
+    if [ ! -f /home/intro-prog/Escritorio/google-chrome.desktop ];
+    then
+        sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace $MATERIA "google-chrome" "google-chrome" "/usr/bin/google-chrome-stable %U"
+    fi
+    if [ ! -f /home/intro-prog/Escritorio/org.thonny.Thonny.desktop ];
+    then
+        if [ ! -f /home/intro-prog/Escritorio/Thonny.desktop ];
+        then
+            sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace $MATERIA "Thonny" "thonny" "/usr/bin/thonny %F"
+        fi
+    fi
 fi
