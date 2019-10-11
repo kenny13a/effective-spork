@@ -3,4 +3,6 @@ MATERIA="administrador"
 
 rm -rf /home/$MATERIA/.local/share/Trash/* 
 
-zenity --question --text="Actualizado 27 septiembre 2019 13:57hs"
+sudo rm -rf /opt/conejo-blanco/Descargas/*
+
+zenity --question --text="Actualizado 11 Octubre 2019 11:13hs"
