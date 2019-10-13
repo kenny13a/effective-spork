@@ -51,3 +51,5 @@ montar_fstabvf "sda3" "ntfs-3g" "DATOS"
 sudo mkdir /opt/conejo-blanco/Descargas
 sudo sed -i '16,$d' /etc/crontab
 
+sudo apt-get autoremove -y
+
