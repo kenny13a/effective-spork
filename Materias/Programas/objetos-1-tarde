@@ -27,7 +27,7 @@ else
         sudo chown -R $MATERIA /home/$MATERIA/wollok/
         sudo chgrp -R $MATERIA /home/$MATERIA/wollok/
         sudo sed -i "8 s|^|# |" /etc/java-8-openjdk/accessibility.properties
-        sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace $MATERIA "Wollok" "/home/$MATERIA/wollok/icon.xpm" "/home/$MATERIA/wollok/launcher"
+        sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace $MATERIA "Wollok" "/home/$MATERIA/wollok/icon.xpm" "/home/$MATERIA/wollok/wollok"
     fi
     node --version >/dev/null
     if [ "$?" = "0" ]; then
@@ -47,7 +47,7 @@ else
         sudo apt-key add /opt/conejo-blanco/Descargas/pubkey.gpg
         sudo echo "deb https://dl.yarnpkg.com/debian/ stable main" >> /etc/apt/sources.list.d/yarn.list
         sudo apt-get update
-        sudo apt-get install yarn
+        sudo apt-get install -y yarn
     fi
     which code >/dev/null
     if [ "$?" = "0" ]; then
