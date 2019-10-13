@@ -1,6 +1,6 @@
 #!/bin/bash
 MATERIA="taller-c"
-
+echo -en "\033]0;$MATERIA\a"
 rm -rf /home/$MATERIA/.local/share/Trash/* 
 
 echo "Instalaciónd e programas para la materia"

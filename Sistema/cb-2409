@@ -1,5 +1,5 @@
 #!/bin/bash
-
+echo -en "\033]0;Conejo-Blanco\a"
 if [[ $UID != 0 ]]; then
     for n in {1..5}; do
         notify-send 'NO dijiste la palabra mágica...'
@@ -13,24 +13,16 @@ exit 1
 else
     echo "FUNCIONO, todo está apagado pero funcionó."        
     echo "continue..."
-#    notify-send 'Funcionó!!!!'
     notify-send 'Universidad Nacional de Hurlingham' 'Laboratorio de Informática' -u normal -i 'UNAHUR-logo' -t 10000
 
 #### entra al repositorio
     cd /opt/conejo-blanco/effective-spork
-    # sudo git pull origin master
-    # pkexec bash /opt/conejo-blanco/effective-spork/Ejecutame
     VAR=$((git fetch -v --dry-run) 2>&1)
     if [[ $VAR = POST* ]]
     then
 	    echo "Repositorio no actualizado"
-#        zenity --question --text="Su sistema no está actualizado. ¿Actualizar?"
-#        if [ $? = 0 ]; then
             sudo git pull origin master
             pkexec bash /opt/conejo-blanco/effective-spork/Ejecutame
-#        else
-#            exit
-#        fi
     else
 	    echo "Nada que actualizar"
     fi

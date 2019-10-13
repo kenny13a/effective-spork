@@ -1,6 +1,6 @@
 #!/bin/bash
 MATERIA="objetos-2"
-
+echo -en "\033]0;$MATERIA\a"
 rm -rf /home/$MATERIA/.local/share/Trash/* 
 find /home/$MATERIA/Escritorio/* -user $MATERIA -exec rm -rf {} \;
 

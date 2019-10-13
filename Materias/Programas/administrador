@@ -1,8 +1,7 @@
 #!/bin/bash
 MATERIA="administrador"
-
+echo -en "\033]0;$MATERIA\a"
+echo -en "\033]1;UNAHUR-logo\a"
 rm -rf /home/$MATERIA/.local/share/Trash/* 
-
 sudo rm -rf /opt/conejo-blanco/Descargas/*
-
 zenity --question --text="Actualizado 11 Octubre 2019 11:13hs"
