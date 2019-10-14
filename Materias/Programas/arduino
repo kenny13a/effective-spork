@@ -20,7 +20,11 @@ else
     else
         echo "├─arduino: $(tput setaf 1)NO$(tput sgr 0)"
         sudo wget https://downloads.arduino.cc/arduino-1.8.10-linux64.tar.xz -O /opt/conejo-blanco/Descargas/arduino-1.8.10-linux64.tar.xz
-        sudo tar xvf /opt/conejo-blanco/Descargas/arduino-1.8.10-linux64.tar.xz -C /home/$MATERIA
+        sudo tar xvf /opt/conejo-blanco/Descargas/arduino-1.8.10-linux64.tar.xz -C /home/$MATERIA/
+	cd /home/$MATERIA/arduino-1.8.9/
+	bash install.sh
+	sudo bash arduino-linux-setup.sh root
+	sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace $MATERIA "arduino" "arduino" "arduino"
     fi
     echo "└────────────────────────╸"
 fi
