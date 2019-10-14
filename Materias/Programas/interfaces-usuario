@@ -3,14 +3,33 @@ MATERIA="interfaces-usuario"
 echo -en "\033]0;$MATERIA\a"
 rm -rf /home/$MATERIA/.local/share/Trash/* 
 find /home/$MATERIA/Escritorio/* -user $MATERIA -exec rm -rf {} \;
-
+/usr/bin/progreso &
+detach %+ # or % + the number in brackets printed after the above
 echo "Instalaciónd e programas para la materia"
 if [[ $UID != 0 ]]; then
         echo "No es administrador"
 exit 1
 else
     sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/administrador
-    sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/root
-    
-    sudo adduser $MATERIA sudo  
+    sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/root    
+    sudo adduser $MATERIA sudo
+    echo "┌──Interfaces de usuario───╸"
+        which code >/dev/null
+    if [ "$?" = "0" ]; then
+	    echo "├─Code Studio:  $(tput setaf 2)OK$(tput sgr 0)"
+        if [ ! -f /home/$MATERIA/Escritorio/code.desktop ];
+        then
+            sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "code" "com.visualstudio.code" "/usr/share/code/code --unity-launch %F"
+        fi
+    else
+        echo "├─Code Studio: $(tput setaf 1)NO$(tput sgr 0)"
+        if [ ! -f /opt/conejo-blanco/Descargas/code_1.35.1-1560350270_amd64.deb ];
+        then
+            sudo wget https://az764295.vo.msecnd.net/stable/c7d83e57cd18f18026a8162d042843bda1bcf21f/code_1.35.1-1560350270_amd64.deb -O /opt/conejo-blanco/Descargas/code_1.35.1-1560350270_amd64.deb
+        fi
+        sudo dpkg -i /opt/conejo-blanco/Descargas/code_1.35.1-1560350270_amd64.deb
+        sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "code" "com.visualstudio.code" "/usr/share/code/code --unity-launch %F"
+    fi    
+    echo "└────────────────────────╸"
 fi
+killall progreso

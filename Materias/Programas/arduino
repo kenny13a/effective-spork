@@ -13,5 +13,15 @@ else
     sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/administrador
     sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/root
     sudo adduser arduino dialout
+    echo "┌──Arduino───╸"
+    which arduino >/dev/null
+    if [ "$?" = "0" ]; then
+	    echo "├─arduino:  $(tput setaf 2)OK$(tput sgr 0)"
+    else
+        echo "├─arduino: $(tput setaf 1)NO$(tput sgr 0)"
+        sudo wget https://downloads.arduino.cc/arduino-1.8.10-linux64.tar.xz -O /opt/conejo-blanco/Descargas/parduino-1.8.10-linux64.tar.xz
+        sudo tar xvzf /opt/conejo-blanco/Descargas/arduino-1.8.10-linux64.tar.xz -C /home/$MATERIA
+    fi
+    echo "└────────────────────────╸"
 fi
 killall progreso
