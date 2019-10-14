@@ -29,5 +29,42 @@ else
         sudo /opt/conejo-blanco/Descargas/xampp-linux-x64-7.2.6-0-installer.run
         sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace $MATERIA XAMPP "/opt/lampp/htdocs/favicon.ico" "pkexec /opt/lampp/manager-linux-x64.run"
     fi
+    nodejs --version >/dev/null
+    if [ "$?" = "0" ]; then
+	    echo "├─NodeJs:  $(tput setaf 2)OK$(tput sgr 0)"
+    else
+        echo "├─NodeJs: $(tput setaf 1)NO$(tput sgr 0)"
+        sudo apt-get install -y nodejs
+    fi
+    npm -v >/dev/null
+    if [ "$?" = "0" ]; then
+	    echo "├─npm:  $(tput setaf 2)OK$(tput sgr 0)"
+    else
+        echo "├─npm: $(tput setaf 1)NO$(tput sgr 0)"
+        sudo apt-get install -y npm
+        sudo npm install -g npm
+    fi
+    which g++ >/dev/null
+    if [ "$?" = "0" ]; then
+	    echo "├─g++:  $(tput setaf 2)OK$(tput sgr 0)"
+    else
+        echo "├─g++: $(tput setaf 1)NO$(tput sgr 0)"
+        sudo apt-get install -y g++
+    fi
+    which gcc >/dev/null
+    if [ "$?" = "0" ]; then
+	    echo "├─gcc:  $(tput setaf 2)OK$(tput sgr 0)"
+    else
+        echo "├─gcc: $(tput setaf 1)NO$(tput sgr 0)"
+        sudo apt-get install -y gcc
+    fi
+    which make >/dev/null
+    if [ "$?" = "0" ]; then
+	    echo "├─make:  $(tput setaf 2)OK$(tput sgr 0)"
+    else
+        echo "├─make: $(tput setaf 1)NO$(tput sgr 0)"
+        sudo apt-get install -y make
+    fi
+    echo "└────────────────────────╸"
 fi
 killall progreso
