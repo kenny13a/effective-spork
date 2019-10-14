@@ -4,13 +4,13 @@ echo -en "\033]0;$MATERIA\a"
 rm -rf /home/$MATERIA/.local/share/Trash/* 
 find /home/$MATERIA/Escritorio/* -user $MATERIA -exec rm -rf {} \;
 echo "Instalaciónd e programas para la materia"
+/home/smaydana/Documentos/GITHUB-repositorios/effective-spork/Sistema/progreso
 if [[ $UID != 0 ]]; then
         echo "No es administrador"
 exit 1
 else
     sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/administrador
     sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/root
-    sudo /home/smaydana/Documentos/GITHUB-repositorios/effective-spork/Sistema/progreso
     echo "┌──Objetos 2───╸"
     mvn --version >/dev/null
     if [ "$?" = "0" ]; then
@@ -36,5 +36,5 @@ else
         
     fi
     echo "└────────────────────────╸"
-    killall progreso
 fi
+killall progreso
