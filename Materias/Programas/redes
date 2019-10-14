@@ -13,6 +13,41 @@ else
     sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/administrador
     sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/root
 #    sudo adduser $MATERIA wireshark
- sudo adduser $MATERIA sudo   
+    sudo adduser $MATERIA sudo
+    echo "┌──Redes───╸"
+    which wireshark >/dev/null
+    if [ "$?" = "0" ]; then
+    	echo "├─Wireshark:  $(tput setaf 2)OK$(tput sgr 0)"
+    else
+        echo "├─Wireshark: $(tput setaf 1)NO$(tput sgr 0)"
+        sudo add-apt-repository -y ppa:wireshark-dev/stable
+        sudo apt-get update
+        sudo apt-get install -y wireshark
+        if [ "$?" = "0" ]; then
+	        echo "Instalacion OK"
+        else
+	        echo "$(tput setaf 1) Error instalando wireshark $(tput sgr 0)"
+            sudo apt-get --fix-missing
+        fi
+        sudo setcap 'CAP_NET_RAW+eip CAP_NET_ADMIN+eip' /usr/bin/dumpcap
+        sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace $MATERIA "wireshark" "wireshark" "wireshark %f"
+    fi
+    which packettracer >/dev/null
+    if [ "$?" = "0" ]; then
+    	echo "├─Packet Tracer:  $(tput setaf 2)OK$(tput sgr 0)"
+    else
+        echo "├─Packet Tracer: $(tput setaf 1)NO$(tput sgr 0)"
+        sudo wget https://www.dropbox.com/s/zymy20ols7jdwdn/Packet%20Tracer%207.2.1%20for%20Linux%2064%20bit.tar.gz -O /opt/conejo-blanco/Descargas/Packet-Tracer.tar.gz
+        mkdir /opt/conejo-blanco/Descargas/PT
+        sudo tar xfv "Packet Tracer 7.2.1 for Linux 64 bit.tar.gz" -C /opt/conejo-blanco/Descargas/PT
+        sudo wget https://www.dropbox.com/s/j1a1kk4bn63ny0x/ptinstall -O /opt/conejo-blanco/Descargas/PT/ptinstall
+        sudo bash /opt/conejo-blanco/Descargas/PT/ptinstall
+        sudo wget http://ftp.mx.debian.org/debian/pool/main/libp/libpng/libpng12-0_1.2.50-2+deb8u3_amd64.deb -O /opt/conejo-blanco/Descargas/libpng12-0_1.2.50-2+deb8u3_amd64.deb
+        sudo dpkg -i /opt/conejo-blanco/Descargas/libpng12-0_1.2.50-2+deb8u3_amd64.deb
+        sudo cp /opt/pt/bin/Cisco-PacketTracer.desktop /usr/share/applications/
+        sudo cp /opt/pt/bin/Cisco-PacketTracer.desktop /home/$MATERIA/Escritorio
+        sudo chmod 755 /home/$MATERIA/Escritorio/Cisco-PacketTracer.desktop
+    fi
+    echo "└────────────────────────╸"
 fi
 killall progreso
