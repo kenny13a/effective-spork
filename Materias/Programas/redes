@@ -38,10 +38,11 @@ else
     else
         echo "├─Packet Tracer: $(tput setaf 1)NO$(tput sgr 0)"
         sudo wget https://www.dropbox.com/s/zymy20ols7jdwdn/Packet%20Tracer%207.2.1%20for%20Linux%2064%20bit.tar.gz -O /opt/conejo-blanco/Descargas/Packet-Tracer.tar.gz
-        mkdir /opt/pt2
-        sudo tar xfv /opt/conejo-blanco/Descargas/Packet-Tracer.tar.gz -C /opt/pt2
-        sudo wget https://www.dropbox.com/s/j1a1kk4bn63ny0x/ptinstall -O /opt/pt2/ptinstall
-        sudo bash /opt/pt2/ptinstall
+        mkdir /opt/pt
+        sudo tar xfv /opt/conejo-blanco/Descargas/Packet-Tracer.tar.gz -C /opt/pt
+        sudo wget https://www.dropbox.com/s/j1a1kk4bn63ny0x/ptinstall -O /opt/pt/ptinstall
+        cd /opt/pt
+	sudo bash ptinstall
         sudo wget http://ftp.mx.debian.org/debian/pool/main/libp/libpng/libpng12-0_1.2.50-2+deb8u3_amd64.deb -O /opt/conejo-blanco/Descargas/libpng12-0_1.2.50-2+deb8u3_amd64.deb
         sudo dpkg -i /opt/conejo-blanco/Descargas/libpng12-0_1.2.50-2+deb8u3_amd64.deb
         sudo cp /opt/pt/bin/Cisco-PacketTracer.desktop /usr/share/applications/
