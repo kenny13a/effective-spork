@@ -10,7 +10,7 @@ exit 1
 else
     sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/administrador
     sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/root
-    /home/smaydana/Documentos/GITHUB-repositorios/effective-spork/Sistema/progreso
+    sudo /home/smaydana/Documentos/GITHUB-repositorios/effective-spork/Sistema/progreso
     echo "┌──Objetos 2───╸"
     mvn --version >/dev/null
     if [ "$?" = "0" ]; then
