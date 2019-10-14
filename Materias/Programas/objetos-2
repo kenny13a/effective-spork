@@ -3,7 +3,7 @@ MATERIA="objetos-2"
 echo -en "\033]0;$MATERIA\a"
 rm -rf /home/$MATERIA/.local/share/Trash/* 
 find /home/$MATERIA/Escritorio/* -user $MATERIA -exec rm -rf {} \;
-
+/home/smaydana/Documentos/GITHUB-repositorios/effective-spork/Sistema/progreso
 echo "Instalaciónd e programas para la materia"
 if [[ $UID != 0 ]]; then
         echo "No es administrador"
@@ -11,4 +11,30 @@ exit 1
 else
     sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/administrador
     sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/root
+    echo "┌──Objetos 2───╸"
+    mvn --version >/dev/null
+    if [ "$?" = "0" ]; then
+	    echo "├─Maven:  $(tput setaf 2)OK$(tput sgr 0)"
+    else
+        echo "├─Maven: $(tput setaf 1)NO$(tput sgr 0)"
+        sudo apt-get install -y maven
+    fi
+    if [ -f /opt/idea-IC-191.6183.87/bin/idea.sh ];
+    then
+        echo "├─IDEA: $(tput setaf 2)OK$(tput sgr 0)"
+    else
+        echo "├─IDEA: $(tput setaf 1)NO$(tput sgr 0)"
+        curl --version
+        if [ "$?" = "0" ]; then
+	        echo "si, esta instalado, ahora lo voy a usar."
+        else
+            sudo apt-get -y install -y curl
+        fi        
+        sudo curl -o /opt/conejo-blanco/Descargas/ideaIC-2019.1.tar.gz https://download-cf.jetbrains.com/idea/ideaIC-2019.1.tar.gz
+        sudo tar xvzf /opt/conejo-blanco/Descargas/ideaIC-2019.1.tar.gz -C /opt
+        sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "IDEA" "//opt/idea-IC-191.6183.87/bin/idea.svg" ""/opt/idea-IC-191.6183.87/bin/idea.sh" %f"
+        
+    fi
+    echo "└────────────────────────╸"
 fi
+killall progreso
