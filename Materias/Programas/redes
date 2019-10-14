@@ -22,7 +22,7 @@ else
         echo "├─Wireshark: $(tput setaf 1)NO$(tput sgr 0)"
         sudo add-apt-repository -y ppa:wireshark-dev/stable
         sudo apt-get update
-        sudo apt-get install -y wireshark
+        sudo apt-get install -y wireshark -y
         if [ "$?" = "0" ]; then
 	        echo "Instalacion OK"
         else
