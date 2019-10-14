@@ -36,7 +36,9 @@ pkexec bash /opt/conejo-blanco/effective-spork/Sistema/sescritorios
 killall bienvenida-unahur
 sudo cp /opt/conejo-blanco/effective-spork/project1 /usr/bin/bienvenida-unahur
 sudo cp /opt/conejo-blanco/effective-spork/Sistema/cb-2409 /usr/bin/conejo-blanco
+sudo cp /opt/conejo-blanco/effective-spork/Sistema/progreso /usr/bin/progreso
 sudo chmod 755 /usr/bin/bienvenida-unahur
+sudo chmod 755 /usr/bin/progreso
 # bienvenida-unahur
 sudo rm /snap/bin/ubuntu-mate-welcome
 
