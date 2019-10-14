@@ -3,7 +3,8 @@ MATERIA="estadistica"
 echo -en "\033]0;$MATERIA\a"
 rm -rf /home/$MATERIA/.local/share/Trash/* 
 #find /home/$MATERIA/Escritorio/* -user $MATERIA -exec rm -rf {} \;
-
+/usr/bin/progreso &
+detach %+ # or % + the number in brackets printed after the above
 echo "Instalaciónd e programas para la materia"
 if [[ $UID != 0 ]]; then
         echo "No es administrador"
@@ -19,3 +20,4 @@ else
         sudo apt-get -y install q4wine
     fi
 fi
+killall progreso

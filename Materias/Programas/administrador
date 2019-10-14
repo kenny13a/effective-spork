@@ -1,7 +1,9 @@
 #!/bin/bash
 MATERIA="administrador"
 echo -en "\033]0;$MATERIA\a"
-echo -en "\033]1;UNAHUR-logo\a"
+/usr/bin/progreso &
+detach %+ # or % + the number in brackets printed after the above
 rm -rf /home/$MATERIA/.local/share/Trash/* 
 sudo rm -rf /opt/conejo-blanco/Descargas/*
-zenity --question --text="Actualizado 11 Octubre 2019 11:13hs"
+zenity --question --text="Actualizado 13 Octubre 2019"
+killall progreso

@@ -3,7 +3,8 @@ MATERIA="estruc-datos"
 echo -en "\033]0;$MATERIA\a"
 rm -rf /home/$MATERIA/.local/share/Trash/* 
 find /home/$MATERIA/Escritorio/* -user $MATERIA -exec rm -rf {} \;
-
+/usr/bin/progreso &
+detach %+ # or % + the number in brackets printed after the above
 echo "Instalaciónd e programas para la materia"
 if [[ $UID != 0 ]]; then
         echo "No es administrador"
@@ -25,6 +26,10 @@ else
         echo "├─Anaconda: $(tput setaf 2)OK$(tput sgr 0)"
     else
         echo "├─Anaconda: $(tput setaf 1)NO$(tput sgr 0)"
+        sudo wget https://repo.anaconda.com/archive/Anaconda3-2019.07-Linux-x86_64.sh -O /opt/conejo-blanco/Descargas/Anaconda3-2019.07-Linux-x86_64.sh
+        sudo bash /opt/conejo-blanco/Descargas/Anaconda3-2019.07-Linux-x86_64.sh -b -p /home/$MATERIA/anaconda3
+        sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace $MATERIA "ANACONDA" "/home/$MATERIA/anaconda3/lib/python3.7/site-packages/anaconda_navigator/static/images/anaconda-icon-256x256.png" "/home/$MATERIA/anaconda3/bin/anaconda-navigator"
     fi
     echo "└────────────────────────╸"
 fi
+killall progreso
