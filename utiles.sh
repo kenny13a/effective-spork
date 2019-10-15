@@ -138,3 +138,6 @@ then
 fi
 }
 
+function elusuario(){
+	sudo userdel -r $1
+}
