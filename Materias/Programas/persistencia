@@ -16,7 +16,7 @@ else
     ###### 16 de octubre
     sudo groupadd docker
     sudo usermod -aG docker $MATERIA
-    newgrp docker
+    #newgrp docker
     ######
     echo "┌──Estructuras de persistencia───╸"
     if [ -f /opt/lampp/manager-linux-x64.run ];
