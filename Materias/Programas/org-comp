@@ -17,6 +17,10 @@ else
     if [ -f /home/org-comp/Logisim/logisim-generic-2.7.1.jar ];
     then
         echo "├─Logisim: $(tput setaf 2)OK$(tput sgr 0)"
+        if [ ! -f /home/$MATERIA/Escritorio/logisim.desktop ];
+        then
+            sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "logisim" "/home/org-comp/Logisim/Logisim-icon.png" "java -jar /home/org-comp/Logisim/logisim-generic-2.7.1.jar" 
+        fi
     else
         echo "├─Logisim: $(tput setaf 1)NO$(tput sgr 0)"
    	    if [ ! -d /home/$MATERIA/Logisim/ ];
@@ -29,7 +33,7 @@ else
         sudo chmod 755 /home/$MATERIA/Logisim/logisim-generic-2.7.1.jar
         wget https://www.dropbox.com/s/fwl7h6g5avnfven/Logisim-icon.png -O /home/$MATERIA/Logisim/Logisim-icon.png
         sudo chmod 555 /home/$MATERIA/Logisim/Logisim-icon.png
-        sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "logisim" "/home/org-comp/Logisim/Logisim-icon.png" "java -jar /home/org-comp/Logisim/logisim-generic-2.7.1.jar"        
+        sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "logisim" "/home/org-comp/Logisim/Logisim-icon.png" "java -jar /home/org-comp/Logisim/logisim-generic-2.7.1.jar"
     fi
 fi
 killall progreso
