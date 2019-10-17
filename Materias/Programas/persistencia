@@ -70,6 +70,18 @@ else
         echo "├─make: $(tput setaf 1)NO$(tput sgr 0)"
         sudo apt-get install -y make
     fi
+    which docker >/dev/null
+    if [ "$?" = "0" ]; then
+	    echo "├─Docker:  $(tput setaf 2)OK$(tput sgr 0)"
+    else
+        echo "├─Docker: $(tput setaf 1)NO$(tput sgr 0)"
+        sudo apt-get install -y docker.io
+        sudo systemctl start docker
+
+        sudo systemctl enable docker
+
+
+    fi
     echo "└────────────────────────╸"
 fi
 killall progreso
