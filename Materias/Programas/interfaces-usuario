@@ -31,5 +31,17 @@ else
         sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "code" "com.visualstudio.code" "/usr/share/code/code --unity-launch %F"
     fi    
     echo "└────────────────────────╸"
+    which docker >/dev/null
+    if [ "$?" = "0" ]; then
+	    echo "├─Docker:  $(tput setaf 2)OK$(tput sgr 0)"
+    else
+        echo "├─Docker: $(tput setaf 1)NO$(tput sgr 0)"
+        sudo apt-get install -y docker.io
+        sudo systemctl start docker
+
+        sudo systemctl enable docker
+
+
+    fi
 fi
 killall progreso
