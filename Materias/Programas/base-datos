@@ -15,6 +15,10 @@ else
     which q4wine >/dev/null
     if [ "$?" = "0" ]; then
 	    echo "├─q4wine:  $(tput setaf 2)OK$(tput sgr 0)"
+	    if [ ! -f /home/$MATERIA/Escritorio/XAMPP.desktop ];
+        then
+            sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace $MATERIA XAMPP "/opt/lampp/htdocs/favicon.ico" "pkexec /opt/lampp/manager-linux-x64.run"
+        fi
     else
         echo "Instalaciónd e programas para la materia"
         sudo apt-get -y install q4wine
