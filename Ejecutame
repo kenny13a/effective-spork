@@ -56,3 +56,4 @@ sudo sed -i '16,$d' /etc/crontab
 
 sudo apt-get autoremove -y
 sudo rm -rf /opt/conejo-blanco/Descargas/*
+echo 2 | sudo update-alternatives --config java
