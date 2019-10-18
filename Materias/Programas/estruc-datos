@@ -24,6 +24,10 @@ else
     if [ -f /home/estruc-datos/anaconda3/bin/anaconda-navigator ];
     then
         echo "├─Anaconda: $(tput setaf 2)OK$(tput sgr 0)"
+	if [ ! -f /home/$MATERIA/Escritorio/ANACONDA.desktop ];
+        then
+            sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace $MATERIA "ANACONDA" "/home/$MATERIA/anaconda3/lib/python3.7/site-packages/anaconda_navigator/static/images/anaconda-icon-256x256.png" "/home/$MATERIA/anaconda3/bin/anaconda-navigator"
+        fi
     else
         echo "├─Anaconda: $(tput setaf 1)NO$(tput sgr 0)"
         sudo wget https://repo.anaconda.com/archive/Anaconda3-2019.07-Linux-x86_64.sh -O /opt/conejo-blanco/Descargas/Anaconda3-2019.07-Linux-x86_64.sh
