@@ -51,7 +51,7 @@ crea_autoejecutablevf protector "gsettings reset-recursively org.mate.screensave
 crea_autoejecutablevf bienvenida-unahur "/usr/bin/bienvenida-unahur"
 protector_pantallavf
 montar_fstabvf "sda3" "ntfs-3g" "DATOS"
-sudo mkdir /opt/conejo-blanco/Descargas
+sudo mkdir -p /opt/conejo-blanco/Descargas
 sudo sed -i '16,$d' /etc/crontab
 
 sudo apt-get autoremove -y
