@@ -15,6 +15,10 @@ else
     which geogebra >/dev/null
     if [ "$?" = "0" ]; then
 	    echo "├─Geogebra:  $(tput setaf 2)OK$(tput sgr 0)"
+	    if [ ! -f /home/$MATERIA/Escritorio/geogebra.desktop ];
+        then
+            sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "geogebra" "geogebra" "geogebra"
+        fi
     else
         echo "Instalaciónd e programas para la materia"
         sudo apt-get -y install geogebra-gnome

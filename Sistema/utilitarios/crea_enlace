@@ -3,17 +3,20 @@ echo "Credor de enlaces"
 if [ -z "$1" ] && [ -z "$2" ]
     then
         echo "Incorrecto, intente:"
-        echo "  sudo crea_enlace "usuario" "programa" "ICONO" "EXEC""
+        echo "  sudo crea_enlace "usuario" "nombre" "ICONO" "EXEC""
         #                           $1          $2       $3      $4
     else
         echo "crear enlace a $2"
    	        if [ ! -d /home/$1/Escritorio/ ];
-                then
-                    sudo mkdir /home/$1/Escritorio
-                    sudo chown $1 /home/$1/Escritorio
-                    sudo chgrp $1 /home/$1/Escritorio
-                fi 
-#        sudo cp "$2.desktop" /home/$1/Escritorio
+            then
+                sudo mkdir /home/$1/Escritorio
+                sudo chown $1 /home/$1/Escritorio
+                sudo chgrp $1 /home/$1/Escritorio
+            fi
+        if [ -f /home/$1/Escritorio/$2.desktop ];
+       	    then
+                sudo rm /home/$1/Escritorio/$2.desktop
+        fi
         ## INICIO del archivo .desktop
         sudo echo "#!/usr/bin/env xdg-open" >> /home/$1/Escritorio/$2.desktop
         sudo echo "[Desktop Entry]" >> /home/$1/Escritorio/$2.desktop
