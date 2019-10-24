@@ -41,7 +41,7 @@ else
         sudo chmod 555 /home/$MATERIA/Logisim/Logisim-icon.png
         sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "logisim" "/home/org-comp/Logisim/Logisim-icon.png" "java -jar /home/org-comp/Logisim/logisim-generic-2.7.1.jar"
     fi
-    sudo sed -i "s/^assistive_technologies=/#&/" /etc/java-11-openjdk/accessibility.properties
-    sudo sed -i "s/^assistive_technologies=/#&/" /etc/java-8-openjdk/accessibility.properties
+    #sudo sed -i "s/^assistive_technologies=/#&/" /etc/java-11-openjdk/accessibility.properties
+   # sudo sed -i "s/^assistive_technologies=/#&/" /etc/java-8-openjdk/accessibility.properties
 fi
 killall progreso
