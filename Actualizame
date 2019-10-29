@@ -15,10 +15,8 @@ else
     if [[ $VAR = POST* ]]
     then
 	    echo "Repositorio no actualizado"
-#            sudo git pull origin master
-echo "sudo git pull origin master"
-#            pkexec bash /opt/conejo-blanco/effective-spork/Ejecutame
-echo "pkexec bash /opt/conejo-blanco/effective-spork/Ejecutame"
+            sudo git pull origin master
+            pkexec bash /opt/conejo-blanco/effective-spork/Ejecutame
     else
 	    echo "Nada que actualizar"
     fi
