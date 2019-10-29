@@ -1,28 +1,36 @@
 #!/bin/bash
+# nombre de terminal
 echo -en "\033]0;Conejo-Blanco\a"
+#Opciones
+while getopts "aheu:" OPTION; do
+        case $OPTION in
+
+                e)
+                        pkexec bash /opt/conejo-blanco/effective-spork/Ejecutame
+                        exit 0
+                        ;;
+                h)
+                        echo "Para ayuda pregunta en el Instituto de Tecnologia"
+                        exit 0
+                        ;;
+                a)
+                        pkexec bash /opt/conejo-blanco/effective-spork/Actualizame
+                        exit 0
+                        ;;
+                u)
+                        pkexec bash /opt/conejo-blanco/effective-spork/Materias/Programas/$OPTARG
+                        exit 0
+                        ;;                    
+        esac
+done
+#verifica sudo
 if [[ $UID != 0 ]]; then
-    for n in {1..5}; do
-        notify-send 'NO dijiste la palabra mágica...'
-        echo "NO dijiste la palabra mágica..."
-        echo ""
-        sleep 1
-            
-    done   
-    echo "please start the script as root or sudo"
+        notify-send 'NO dijiste la palabra mágica...'  
+        /usr/bin/palabramagica &
+    echo "Solo el administrador puede ejecutar este comando"
 exit 1
 else
     echo "FUNCIONO, todo está apagado pero funcionó."        
-    echo "continue..."
     notify-send 'Universidad Nacional de Hurlingham' 'Laboratorio de Informática' -u normal -i 'UNAHUR-logo' -t 10000
-#### entra al repositorio
-    cd /opt/conejo-blanco/effective-spork
-    VAR=$((git fetch -v --dry-run) 2>&1)
-    if [[ $VAR = POST* ]]
-    then
-	    echo "Repositorio no actualizado"
-            sudo git pull origin master
-            pkexec bash /opt/conejo-blanco/effective-spork/Ejecutame
-    else
-	    echo "Nada que actualizar"
-    fi
+    pkexec bash /opt/conejo-blanco/effective-spork/Actualizame
 fi
