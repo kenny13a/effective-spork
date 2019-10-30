@@ -26,8 +26,9 @@ done
 #verifica sudo
 if [[ $UID != 0 ]]; then
         notify-send 'NO dijiste la palabra mágica...'  
-        /usr/bin/palabramagica &
-    echo "Solo el administrador puede ejecutar este comando"
+        echo "Solo el administrador puede ejecutar este comando"
+        palabramagica &
+        exit
 exit 0
 else
     echo "FUNCIONO, todo está apagado pero funcionó."        
