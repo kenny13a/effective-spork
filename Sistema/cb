@@ -1,8 +1,9 @@
 #!/bin/bash
+VERSION="1.10.30"
 # nombre de terminal
 echo -en "\033]0;Conejo-Blanco\a"
 #Opciones
-while getopts "aheu:" OPTION; do
+while getopts "aheu:v" OPTION; do
         case $OPTION in
 
                 e)
@@ -10,7 +11,7 @@ while getopts "aheu:" OPTION; do
                         exit 0
                         ;;
                 h)
-                        echo "Para ayuda pregunta en el Instituto de Tecnologia"
+                        echo "Para ayuda preguntar en el Instituto de Tecnologia e Ingeniería - UNAHUR"
                         exit 0
                         ;;
                 a)
@@ -19,6 +20,10 @@ while getopts "aheu:" OPTION; do
                         ;;
                 u)
                         pkexec bash /opt/conejo-blanco/effective-spork/Materias/Programas/$OPTARG
+                        exit 0
+                        ;;
+                v)
+                        echo "versión: $VERSION"
                         exit 0
                         ;;                    
         esac
