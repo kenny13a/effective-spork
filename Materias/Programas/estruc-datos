@@ -36,8 +36,8 @@ else
     fi
     echo "└────────────────────────╸"
     #conda install python-graphviz
-    su $MATERIA
-    conda install -y python-graphviz
+    #su $MATERIA
+    /home/estruc-datos/anaconda3/bin/conda install -y python-graphviz
 
 fi
 killall progreso
