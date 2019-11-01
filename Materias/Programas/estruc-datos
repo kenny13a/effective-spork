@@ -6,6 +6,7 @@ find /home/$MATERIA/Escritorio/* -user $MATERIA -exec rm -rf {} \;
 /usr/bin/progreso &
 detach %+ # or % + the number in brackets printed after the above
 echo "Instalaciónd e programas para la materia"
+pip install graphviz
 if [[ $UID != 0 ]]; then
         echo "No es administrador"
 exit 1
