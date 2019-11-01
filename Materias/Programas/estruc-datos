@@ -35,5 +35,6 @@ else
         sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace $MATERIA "ANACONDA" "/home/$MATERIA/anaconda3/lib/python3.7/site-packages/anaconda_navigator/static/images/anaconda-icon-256x256.png" "/home/$MATERIA/anaconda3/bin/anaconda-navigator"
     fi
     echo "└────────────────────────╸"
+    /home/estruc-datos/anaconda3/bin/pip install graphviz
 fi
 killall progreso
