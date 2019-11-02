@@ -1,2 +1,14 @@
 #!/bin/bash
-sudo rm -rf /opt/conejo-blanco/Descargas/*
+                        if [ "$(ls -A /opt/conejo-blanco/Descargas)" ]; then
+                        echo "La carpeta de descargas no está vacía"
+                        du -h /opt/conejo-blanco/Descargas | cut -f -1
+                        read -p "¿Vaciarla? [S/s]" -n 1 -r
+                        echo    # (optional) move to a new line
+                        if [[ $REPLY =~ ^[Ss]$ ]]
+                            then
+                                sudo rm -rf /opt/conejo-blanco/Descargas/*
+                                exit 1
+                        fi
+                        else
+                            echo "La carpeta de descargas está vacía"
+                        fi
