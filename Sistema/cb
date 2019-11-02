@@ -1,9 +1,9 @@
 #!/bin/bash
-VERSION="1.10.30"
+VERSION="1.11.02"
 # nombre de terminal
 echo -en "\033]0;Conejo-Blanco\a"
 #Opciones
-while getopts "aheu:v" OPTION; do
+while getopts "aheu:vd" OPTION; do
         case $OPTION in
 
                 e)
@@ -24,6 +24,22 @@ while getopts "aheu:v" OPTION; do
                         ;;
                 v)
                         echo "versión: $VERSION"
+                        exit 0
+                        ;;
+                d)
+                        if [ "$(ls -A /opt/conejo-blanco/Descargas)" ]; then
+                        echo "La carpeta de descargas no está vacía"
+                        du -h /opt/conejo-blanco/Descargas | cut -f -1
+                        read -p "¿Vaciarla? [S/s]" -n 1 -r
+                        echo    # (optional) move to a new line
+                        if [[ $REPLY =~ ^[Ss]$ ]]
+                            then
+                                pkexec bash /opt/conejo-blanco/effective-spork/Sistema/vDesc
+                                exit 1
+                        fi
+                        else
+                            echo "La carpeta de descargas está vacía"
+                        fi
                         exit 0
                         ;;                    
         esac
