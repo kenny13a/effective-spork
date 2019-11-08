@@ -42,6 +42,8 @@ sudo cp /opt/conejo-blanco/effective-spork/Sistema/progreso /usr/bin/progreso
 sudo chmod 755 /usr/bin/progreso
 sudo cp /opt/conejo-blanco/effective-spork/Sistema/palabramagica /usr/bin/palabramagica
 sudo chmod 755 /usr/bin/palabramagica
+sudo cp /opt/conejo-blanco/effective-spork/Sistema/ocultador /usr/bin/ocultador
+sudo chmod 755 /usr/bin/ocultador
 # bienvenida-unahur
 sudo rm /snap/bin/ubuntu-mate-welcome
 
