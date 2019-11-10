@@ -20,4 +20,5 @@ else
     else
 	    echo "Nada que actualizar"
     fi
+    killall ocultador
 fi
