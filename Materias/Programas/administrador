@@ -1,11 +1,11 @@
 #!/bin/bash
 MATERIA="administrador"
 echo -en "\033]0;$MATERIA\a"
-/usr/bin/ocultador &
+#/usr/bin/ocultador &
 /usr/bin/progreso &
 detach %+ # or % + the number in brackets printed after the above
 rm -rf /home/$MATERIA/.local/share/Trash/* 
 sudo rm -rf /opt/conejo-blanco/Descargas/*
 #zenity --question --text="Actualizado 10 noviembre 2019"
 killall progreso
-killall ocultador
+# killall ocultador
