@@ -28,7 +28,6 @@ else
     then
         echo "├─XAMPP: $(tput setaf 2)OK$(tput sgr 0)"
         sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace $MATERIA XAMPP "/opt/lampp/htdocs/favicon.ico" "pkexec /opt/lampp/manager-linux-x64.run"
-    fi
     else
         echo "├─XAMPP: $(tput setaf 1)NO$(tput sgr 0)"
         sudo wget https://www.dropbox.com/s/ovd3mtx7ukevts1/com.ubuntu.pkexec.xampp.policy -O /usr/share/polkit-1/actions/com.ubuntu.pkexec.xampp.policy
