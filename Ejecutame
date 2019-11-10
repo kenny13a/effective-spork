@@ -52,7 +52,7 @@ crea_autoejecutablevf logo "gsettings set org.mate.background picture-filename '
 crea_autoejecutablevf paneles "mate-panel --reset"
 crea_autoejecutablevf interfaz "gsettings reset-recursively org.mate.interface"
 crea_autoejecutablevf marquitos "gsettings reset-recursively org.mate.Marco"
-crea_autoejecutablevf protector "gsettings reset-recursively org.mate.screensaver"
+crea_autoejecutablevf protector "gsettings reset-recursively org.mate.screensaver | gsettings set org.mate.screensaver lock-enabled false"
 crea_autoejecutablevf bienvenida-unahur "/usr/bin/bienvenida-unahur"
 protector_pantallavf
 montar_fstabvf "sda3" "ntfs-3g" "DATOS"
