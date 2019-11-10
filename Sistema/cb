@@ -40,6 +40,7 @@ if [[ $UID != 0 ]]; then
         exit
 exit 0
 else
+    /usr/bin/ocultador &
     echo "FUNCIONO, todo está apagado pero funcionó."        
     notify-send 'Universidad Nacional de Hurlingham' 'Laboratorio de Informática' -u normal -i 'UNAHUR-logo' -t 10000
     pkexec bash /opt/conejo-blanco/effective-spork/Actualizame
