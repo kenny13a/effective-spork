@@ -1,5 +1,5 @@
 #!/bin/bash
-VERSION="1.11.02"
+VERSION="1.11.11"
 # nombre de terminal
 echo -en "\033]0;Conejo-Blanco\a"
 #Opciones
