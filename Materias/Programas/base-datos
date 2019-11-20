@@ -48,6 +48,6 @@ else
         sudo dpkg -i /opt/conejo-blanco/Descargas/dbeaver-ce_6.2.2_amd64.deb
 	sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace $MATERIA dbeaver "/usr/share/dbeaver/dbeaver.png" "/usr/share/dbeaver/dbeaver"
     fi
-    sudo apt-get upgrade -y
+    #sudo apt-get upgrade -y
 fi
 killall progreso
