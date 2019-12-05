@@ -27,6 +27,7 @@ existeuservf "bioinformatica"
 existeuservf "biotecnologia"
 # Lunes 30 de septiembre de 2019
 existeuservf "taller-c"
+existeuservf "cidia"
 
 # martes 10 de septiembre de 2019
 # notify-send 'ATENCION' 'A partir de ahora cualquier archivo personal debe ir en Documentos de la carpeta personal' -u normal -i 'conejo-blanco' -t 10000
