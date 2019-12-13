@@ -37,5 +37,10 @@ else
         
     fi
     echo "└────────────────────────╸"
+    if [ ! -f /home/$MATERIA/Escritorio/IDEA.desktop ];
+    then
+        sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "IDEA" "//opt/idea-IC-191.6183.87/bin/idea.svg" ""/opt/idea-IC-191.6183.87/bin/idea.sh" %f"
+    fi
+    
 fi
 killall progreso
