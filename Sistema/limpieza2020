@@ -1,8 +1,9 @@
 #!/bin/bash
 
 limpiar () {
-    if [ ! -d /home/$1/Descargas/ ];
+    if [ -d /home/$1/Descargas/ ];
        then
+            echo "Limpiando $1 2020"
             rm -rf /home/$1/Descargas/*
             rm -rf /home/$1/Documentos/*
             rm -rf /home/$1/Imágenes/*
@@ -10,7 +11,7 @@ limpiar () {
             rm -rf /home/$1/Música/*
     fi
 }
-
+echo "Limpieza 2020"
 limpiar "algebra-1"
 limpiar "arduino"
 limpiar "base-datos"
