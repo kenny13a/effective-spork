@@ -8,26 +8,32 @@ s_escritorio () {
           sudo chgrp $1 /home/$1/Escritorio
     fi
     sudo chmod -v 555 /home/$1/Escritorio
+    echo "El escritorio de $1 está ahora bloqueado"
 }
 
 #s_escritorio ""
-
-
-
+s_escritorio "algebra-1"
+s_escritorio "arduino"
+#s_escritorio "base-datos"
+s_escritorio "bioinformatica"
+s_escritorio "biotecnologia"
+#s_escritorio "cidia"
+s_escritorio "concurrente"
+#s_escritorio "estadistica"
+s_escritorio "estruc-datos"
+s_escritorio "ing-software"
+s_escritorio "interfaces-usuario"
+s_escritorio "intro-prog"
+s_escritorio "nuevos-entornos"
 s_escritorio "objetos-1-tarde"
 s_escritorio "objetos-1-noche"
 s_escritorio "objetos-2"
-s_escritorio "nuevos-entornos"
-s_escritorio "intro-prog"
-s_escritorio "redes"
-# "base-datos"
-s_escritorio "biotecnologia"
 s_escritorio "org-comp"
-s_escritorio "sist-operativos"
-s_escritorio "estruc-datos"
-s_escritorio "interfaces-usuario"
 s_escritorio "persistencia"
-s_escritorio "algebra-1"
+s_escritorio "redes"
+s_escritorio "sist-operativos"
+s_escritorio "taller-c"
+
 
 
 pkexec bash /opt/conejo-blanco/effective-spork/Materias/Programas/$USER
