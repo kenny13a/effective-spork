@@ -3,10 +3,11 @@
 limpiar () {
     if [ ! -d /home/$1/Descargas/ ];
        then
-            rm -rf /home/$MATERIA/Descargas/*
-            rm -rf /home/$MATERIA/Documentos/*
-            rm -rf /home/$MATERIA/Imágenes/*
-            rm -rf /home/$MATERIA/Vídeos/*
+            rm -rf /home/$1/Descargas/*
+            rm -rf /home/$1/Documentos/*
+            rm -rf /home/$1/Imágenes/*
+            rm -rf /home/$1/Vídeos/*
+            rm -rf /home/$1/Música/*
     fi
 }
 
