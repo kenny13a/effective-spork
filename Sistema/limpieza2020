@@ -1,0 +1,33 @@
+#!/bin/bash
+
+limpiar () {
+    if [ ! -d /home/$1/Descargas/ ];
+       then
+            rm -rf /home/$MATERIA/Descargas/*
+            rm -rf /home/$MATERIA/Documentos/*
+            rm -rf /home/$MATERIA/Imágenes/*
+            rm -rf /home/$MATERIA/Vídeos/*
+    fi
+}
+
+limpiar "algebra-1"
+limpiar "arduino"
+limpiar "base-datos"
+limpiar "bioinformatica"
+limpiar "biotecnologia"
+limpiar "cidia"
+limpiar "concurrente"
+limpiar "estadistica"
+limpiar "estruc-datos"
+limpiar "ing-software"
+limpiar "interfaces-usuario"
+limpiar "intro-prog"
+limpiar "nuevos-entornos"
+limpiar "objetos-1-tarde"
+limpiar "objetos-1-noche"
+limpiar "objetos-2"
+limpiar "org-comp"
+limpiar "persistencia"
+limpiar "redes"
+limpiar "sist-operativos"
+limpiar "taller-c"
