@@ -50,5 +50,6 @@ else
         sudo dpkg -i /opt/conejo-blanco/Descargas/code_1.35.1-1560350270_amd64.deb
         sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "code" "com.visualstudio.code" "/usr/share/code/code --unity-launch %F"
     fi
+    sudo apt-get install python3-pip
 fi
 killall progreso
