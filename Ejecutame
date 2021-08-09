@@ -5,39 +5,39 @@
 
 source /opt/conejo-blanco/effective-spork/utiles.sh
 
-sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/administrador
+#sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/administrador
 # chequeo y creacion de usuarios
-existeuservf "algebra-1"
-existeuservf "base-datos"
-existeuservf "estadistica"
-existeuservf "persistencia"
+#existeuservf "algebra-1"
+#existeuservf "base-datos"
+#existeuservf "estadistica"
+#existeuservf "persistencia"
 existeuservf "estruc-datos"
-existeuservf "interfaces-usuario"
+#existeuservf "interfaces-usuario"
 existeuservf "intro-prog"
 existeuservf "nuevos-entornos"
 existeuservf "objetos-1-noche"
 existeuservf "objetos-1-tarde"
 existeuservf "objetos-2"
-existeuservf "org-comp"
-existeuservf "redes"
-existeuservf "sist-operativos"
-existeuservf "ing-software"
-existeuservf "arduino"
-existeuservf "bioinformatica"
-existeuservf "biotecnologia"
+#existeuservf "org-comp"
+#existeuservf "redes"
+#existeuservf "sist-operativos"
+#existeuservf "ing-software"
+#existeuservf "arduino"
+#existeuservf "bioinformatica"
+#existeuservf "biotecnologia"
 # Lunes 30 de septiembre de 2019
-existeuservf "taller-c"
-existeuservf "cidia"
+#existeuservf "taller-c"
+#existeuservf "cidia"
 # Lunes 27 de enero de 2020
-existeuservf "concurrente"
+#existeuservf "concurrente"
 # Jueves 27 de febrero de 2020
-existeuservf "taller-git"
+#existeuservf "taller-git"
 
 # martes 10 de septiembre de 2019
 # notify-send 'ATENCION' 'A partir de ahora cualquier archivo personal debe ir en Documentos de la carpeta personal' -u normal -i 'conejo-blanco' -t 10000
 pkexec bash /opt/conejo-blanco/effective-spork/Sistema/sescritorios
 ### RECORDAR SACAR ESTO LUEGO DEL INICIO DE CLASES
-pkexec bash /opt/conejo-blanco/effective-spork/Sistema/limpieza2020
+#pkexec bash /opt/conejo-blanco/effective-spork/Sistema/limpieza2020
 
 ## actulización del bienvenida-unahur
 killall bienvenida-unahur
