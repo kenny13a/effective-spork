@@ -31,8 +31,12 @@ else
         else
             sudo apt-get -y install -y curl
         fi        
-        sudo curl -o /opt/conejo-blanco/Descargas/ideaIC-2019.1.tar.gz https://download-cf.jetbrains.com/idea/ideaIC-2019.1.tar.gz
-        sudo tar xvzf /opt/conejo-blanco/Descargas/ideaIC-2019.1.tar.gz -C /opt
+        #sudo curl -o /opt/conejo-blanco/Descargas/ideaIC-2019.1.tar.gz https://download-cf.jetbrains.com/idea/ideaIC-2019.1.tar.gz
+        #sudo tar xvzf /opt/conejo-blanco/Descargas/ideaIC-2019.1.tar.gz -C /opt
+	sudo apt install openjdk-11-jre-headless
+	echo 2 | sudo update-alternatives --config java
+	sudo snap install intellij-idea-community --classic
+	
         sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "IDEA" "//opt/idea-IC-191.6183.87/bin/idea.svg" ""/opt/idea-IC-191.6183.87/bin/idea.sh" %f"
         
     fi
