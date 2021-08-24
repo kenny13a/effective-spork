@@ -37,13 +37,13 @@ else
 	#echo 2 | sudo update-alternatives --config java
 	sudo snap install intellij-idea-community --classic
 	
-        sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "IDEA" "//opt/idea-IC-191.6183.87/bin/idea.svg" ""/opt/idea-IC-191.6183.87/bin/idea.sh" %f"
-        
+        #sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "IDEA" "//opt/idea-IC-191.6183.87/bin/idea.svg" ""/opt/idea-IC-191.6183.87/bin/idea.sh" %f"
+        sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "IDEA" "/snap/intellij-idea-community/315/bin/idea.svg" "intellij-idea-community"
     fi
     echo "└────────────────────────╸"
     if [ ! -f /home/$MATERIA/Escritorio/IDEA.desktop ];
     then
-        sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "IDEA" "//opt/idea-IC-191.6183.87/bin/idea.svg" ""/opt/idea-IC-191.6183.87/bin/idea.sh" %f"
+        sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "IDEA" "/snap/intellij-idea-community/315/bin/idea.svg" "intellij-idea-community"
     fi
     
 fi
