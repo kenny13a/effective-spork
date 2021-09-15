@@ -20,30 +20,34 @@ else
         echo "├─Maven: $(tput setaf 1)NO$(tput sgr 0)"
         sudo apt-get install -y maven
     fi
-    if [ -f /opt/idea-IC-191.6183.87/bin/idea.sh ];
+    	#if [ -f /opt/idea-IC-191.6183.87/bin/idea.sh ];
+    which intellij-idea-community >/dev/null
+    if [ "$?" = "0" ];
     then
         echo "├─IDEA: $(tput setaf 2)OK$(tput sgr 0)"
     else
         echo "├─IDEA: $(tput setaf 1)NO$(tput sgr 0)"
-        curl --version
-        if [ "$?" = "0" ]; then
-	        echo "si, esta instalado, ahora lo voy a usar."
-        else
-            sudo apt-get -y install -y curl
-        fi        
-        #sudo curl -o /opt/conejo-blanco/Descargas/ideaIC-2019.1.tar.gz https://download-cf.jetbrains.com/idea/ideaIC-2019.1.tar.gz
-        #sudo tar xvzf /opt/conejo-blanco/Descargas/ideaIC-2019.1.tar.gz -C /opt
+        	#curl --version
+        	#if [ "$?" = "0" ]; then
+		#        echo "si, esta instalado, ahora lo voy a usar."
+        	#else
+        	#    sudo apt-get -y install -y curl
+        	#fi        
+        	#sudo curl -o /opt/conejo-blanco/Descargas/ideaIC-2019.1.tar.gz https://download-cf.jetbrains.com/idea/ideaIC-2019.1.tar.gz
+        	#sudo tar xvzf /opt/conejo-blanco/Descargas/ideaIC-2019.1.tar.gz -C /opt
 	sudo apt install openjdk-11-jre-headless
-	#echo 2 | sudo update-alternatives --config java
+		#echo 2 | sudo update-alternatives --config java
 	sudo snap install intellij-idea-community --classic
 	
-        #sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "IDEA" "//opt/idea-IC-191.6183.87/bin/idea.svg" ""/opt/idea-IC-191.6183.87/bin/idea.sh" %f"
-        sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "IDEA" "/snap/intellij-idea-community/315/bin/idea.svg" "intellij-idea-community"
+        	#sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "IDEA" "//opt/idea-IC-191.6183.87/bin/idea.svg" ""/opt/idea-IC-191.6183.87/bin/idea.sh" %f"
+        sudo cp /snap/intellij-idea-community/323/bin/idea.png /snap/idea.png
+	sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "IDEA" "/snap/idea.png" "intellij-idea-community"
     fi
     echo "└────────────────────────╸"
     if [ ! -f /home/$MATERIA/Escritorio/IDEA.desktop ];
     then
-        sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "IDEA" "/snap/intellij-idea-community/315/bin/idea.svg" "intellij-idea-community"
+    	sudo cp /snap/intellij-idea-community/323/bin/idea.png /snap/idea.png
+        sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "IDEA" "/snap/idea.png" "intellij-idea-community"
     fi
     
 fi
