@@ -28,5 +28,17 @@ else
     then
         sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace $MATERIA "google-chrome" "google-chrome" "/usr/bin/google-chrome-stable %U"
     fi
+    which Zettlr >/dev/null
+    if [ "$?" = "0" ]; then
+    	echo "├─Zettlr:  $(tput setaf 2)OK$(tput sgr 0)"
+    else
+        echo "├─Zettlr: $(tput setaf 1)NO$(tput sgr 0)"
+        sudo wget https://github.com/Zettlr/Zettlr/releases/download/v2.0.1/Zettlr-2.0.1-amd64.deb -O /opt/conejo-blanco/Descargas/Zettlr-2.0.1-amd64.deb
+        sudo dpkg -i /opt/conejo-blanco/Descargas/Zettlr-2.0.1-amd64.deb
+    fi
+    if [ ! -f /home/$MATERIA/Escritorio/Zettlr.desktop ];
+    then
+        sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace $MATERIA "Zettlr" "Zettlr" "/opt/Zettlr/Zettlr %U"
+    fi
 fi
 killall progreso
