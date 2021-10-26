@@ -14,7 +14,7 @@ else
     sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/administrador
     sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/root
     echo "┌──Organizacion de computadoras───╸"
-    if [ -f /home/org-comp/Logisim/logisim-generic-2.7.1.jar ];
+    if [ -f /home/$MATERIA/Logisim/logisim-generic-2.7.1.jar ];
     then
         echo "├─Logisim: $(tput setaf 2)OK$(tput sgr 0)"
         if [ ! -f /home/$MATERIA/Escritorio/logisim.desktop ];
