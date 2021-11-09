@@ -8,7 +8,7 @@ source /opt/conejo-blanco/effective-spork/utiles.sh
 #sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/administrador
 # chequeo y creacion de usuarios
 #existeuservf "algebra-1"
-#existeuservf "base-datos"
+existeuservf "base-datos"
 #existeuservf "estadistica"
 #existeuservf "persistencia"
 existeuservf "estruc-datos"
