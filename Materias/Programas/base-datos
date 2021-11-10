@@ -21,7 +21,7 @@ else
         fi
     else
         echo "Instalaciónd e programas para la materia"
-        sudo apt-get -y install q4wine
+      #  sudo apt-get -y install q4wine
     fi
     echo "┌──XAMPP───╸"
     if [ -f /opt/lampp/manager-linux-x64.run ];
