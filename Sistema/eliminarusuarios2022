@@ -1,0 +1,31 @@
+#!/bin/bash
+
+eliminarusuario () {
+    userdel $1
+    rm -r /home/$1
+}
+echo "Limpieza 2022"
+
+
+eliminarusuario "algebra-1"
+eliminarusuario "base-datos"
+eliminarusuario "estadistica"
+eliminarusuario "persistencia"
+eliminarusuario "estruc-datos"
+eliminarusuario "interfaces-usuario"
+eliminarusuario "intro-prog"
+eliminarusuario "nuevos-entornos"
+eliminarusuario "objetos-1-noche"
+eliminarusuario "objetos-1-tarde"
+eliminarusuario "objetos-2"
+eliminarusuario "org-comp"
+eliminarusuario "redes"
+eliminarusuario "sist-operativos"
+eliminarusuario "ing-software"
+eliminarusuario "arduino"
+eliminarusuario "bioinformatica"
+eliminarusuario "biotecnologia"
+eliminarusuario "taller-c"
+eliminarusuario "cidia"
+eliminarusuario "concurrente"
+eliminarusuario "taller-git"
