@@ -11,6 +11,9 @@ pkexec bash /opt/conejo-blanco/effective-spork/Sistema/eliminarusuarios2022
 #sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/administrador
 # chequeo y creacion de usuarios
 existeuservf "nuevos-entornos"
+existeuservf "objetos-1-noche"
+existeuservf "objetos-1-tarde"
+
 
 # martes 10 de septiembre de 2019
 # notify-send 'ATENCION' 'A partir de ahora cualquier archivo personal debe ir en Documentos de la carpeta personal' -u normal -i 'conejo-blanco' -t 10000
