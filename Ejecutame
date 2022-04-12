@@ -33,8 +33,14 @@ sudo cp /opt/conejo-blanco/effective-spork/Sistema/palabramagica /usr/bin/palabr
 sudo chmod 755 /usr/bin/palabramagica
 sudo cp /opt/conejo-blanco/effective-spork/Sistema/ocultador /usr/bin/ocultador
 sudo chmod 755 /usr/bin/ocultador
-# bienvenida-unahur
 sudo rm /snap/bin/ubuntu-mate-welcome
+## 12 abril 2022
+sudo cp /opt/conejo-blanco/effective-spork/Sistema/lightdm.conf /etc/lightdm/lightdm.conf
+sudo chmod 744 /etc/lightdm/lightdm.conf
+#eliminar si no funciona
+sudo cp /opt/conejo-blanco/effective-spork/Sistema/com.ubuntu.pkexec.bash.policy /usr/share/polkit-1/actions/com.ubuntu.pkexec.bash.policy
+sudo chmod 744 /usr/share/polkit-1/actions/com.ubuntu.pkexec.bash.policy
+
 
 descargar_logosvf
 crea_autoejecutablevf logo "gsettings set org.mate.background picture-filename '/usr/share/backgrounds/Logo.jpg'"
