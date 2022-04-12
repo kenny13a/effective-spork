@@ -19,7 +19,7 @@ else
         echo "├─Wollok-noche: $(tput setaf 1)NO$(tput sgr 0)"
         if [ ! -f /opt/conejo-blanco/Descargas/wollok-linux.gtk.x86_64.zip ];
         then
-            sudo wget http://wollokdownload.s3-website-us-west-2.amazonaws.com/wollok/products/stable/wollok-linux.gtk.x86_64.zip -O /opt/conejo-blanco/Descargas/wollok-linux.gtk.x86_64.zip
+            sudo wget https://github.com/uqbar-project/wollok/releases/download/v3.0.0/wollok-linux.gtk.x86_64.zip -O /opt/conejo-blanco/Descargas/wollok-linux.gtk.x86_64.zip
         fi
         unzip /opt/conejo-blanco/Descargas/wollok-linux.gtk.x86_64.zip -d /home/$MATERIA/wollok
         export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
