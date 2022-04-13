@@ -6,7 +6,7 @@
 source /opt/conejo-blanco/effective-spork/utiles.sh
 
 ### 2022 INICIO DEL AÑO
-pkexec bash /opt/conejo-blanco/effective-spork/Sistema/eliminarusuarios2022
+#pkexec bash /opt/conejo-blanco/effective-spork/Sistema/eliminarusuarios2022
 
 #sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/administrador
 # chequeo y creacion de usuarios
@@ -51,6 +51,8 @@ sudo rm /etc/xdg/autostart/protector.desktop
 crea_autoejecutablevf protector "gsettings reset-recursively org.mate.screensaver | gsettings set org.mate.screensaver lock-enabled false"
 crea_autoejecutablevf bienvenida-unahur "/usr/bin/bienvenida-unahur"
 protector_pantallavf
+crea_autoejecutablevf invitados "pkexec bash /opt/conejo-blanco/effective-spork/Sistema/eliminar-guest-sesions.sh"
+
 montar_fstabvf "sda3" "ntfs-3g" "DATOS"
 sudo mkdir -p /opt/conejo-blanco/Descargas
 sudo sed -i '16,$d' /etc/crontab
