@@ -40,6 +40,10 @@ sudo chmod 744 /etc/lightdm/lightdm.conf
 #eliminar si no funciona
 sudo cp /opt/conejo-blanco/effective-spork/Sistema/com.ubuntu.pkexec.bash.policy /usr/share/polkit-1/actions/com.ubuntu.pkexec.bash.policy
 sudo chmod 744 /usr/share/polkit-1/actions/com.ubuntu.pkexec.bash.policy
+##13-4-2022
+/opt/conejo-blanco/effective-spork/Sistema/eliminar-guest-sesions.sh
+sudo cp /opt/conejo-blanco/effective-spork/Sistema/eliminar-guest-sesions.sh /usr/bin/del-guest-sesions
+sudo chmod 755 /usr/bin/del-guest-sesions
 
 
 descargar_logosvf
@@ -51,7 +55,7 @@ sudo rm /etc/xdg/autostart/protector.desktop
 crea_autoejecutablevf protector "gsettings reset-recursively org.mate.screensaver | gsettings set org.mate.screensaver lock-enabled false"
 crea_autoejecutablevf bienvenida-unahur "/usr/bin/bienvenida-unahur"
 protector_pantallavf
-crea_autoejecutablevf invitados "pkexec bash /opt/conejo-blanco/effective-spork/Sistema/eliminar-guest-sesions.sh"
+crea_autoejecutablevf invitados "pkexec bash /usr/bin/del-guest-sesions"
 
 montar_fstabvf "sda3" "ntfs-3g" "DATOS"
 sudo mkdir -p /opt/conejo-blanco/Descargas
