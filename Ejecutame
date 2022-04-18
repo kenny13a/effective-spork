@@ -13,6 +13,8 @@ source /opt/conejo-blanco/effective-spork/utiles.sh
 existeuservf "nuevos-entornos"
 existeuservf "objetos-1-noche"
 existeuservf "objetos-1-tarde"
+existeuservf "objetos-2"
+
 
 
 # martes 10 de septiembre de 2019
