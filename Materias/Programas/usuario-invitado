@@ -1,7 +1,21 @@
 #!/bin/bash
+
+limpiar () {
+    if [ -d /home/$1/Descargas/ ];
+       then
+            echo "Limpiando $1 2020"
+            rm -rf /home/$1/Descargas/*
+            rm -rf /home/$1/Documentos/*
+            rm -rf /home/$1/Imágenes/*
+            rm -rf /home/$1/Vídeos/*
+            rm -rf /home/$1/Música/*
+    fi
+}
+
 MATERIA="usuario-invitado"
 echo -en "\033]0;$MATERIA\a"
 rm -rf /home/$MATERIA/.local/share/Trash/* 
+limpiar usuario-invitado
 find /home/$MATERIA/Escritorio/* -user $MATERIA -exec rm -rf {} \;
 /usr/bin/progreso &
 detach %+ # or % + the number in brackets printed after the above
