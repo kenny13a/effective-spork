@@ -1,0 +1,7 @@
+if id -u "usuario-invitado" >/dev/null 2>&1; then
+	echo "├ usuario $1:  $(tput setaf 2)Existe$(tput sgr 0)"
+else
+    echo "├ usuario $1: $(tput setaf 1)NO existe$(tput sgr 0)"
+    sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_usuario "usuario-invitado" "unahur"
+	sudo passwd -d usuario-invitado
+fi
