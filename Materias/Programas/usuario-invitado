@@ -1,0 +1,32 @@
+#!/bin/bash
+MATERIA="usuario-invitado"
+echo -en "\033]0;$MATERIA\a"
+rm -rf /home/$MATERIA/.local/share/Trash/* 
+find /home/$MATERIA/Escritorio/* -user $MATERIA -exec rm -rf {} \;
+/usr/bin/progreso &
+detach %+ # or % + the number in brackets printed after the above
+echo "Instalaciónd e programas para la materia"
+if [[ $UID != 0 ]]; then
+        echo "No es administrador"
+exit 1
+else
+    sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/administrador
+    sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/root
+    if [ ! -f /home/$MATERIA/Escritorio/firefox.desktop ];
+    then
+        sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace $MATERIA "firefox" "firefox" "firefox"
+    fi
+    which google-chrome-stable >/dev/null
+    if [ "$?" = "0" ]; then
+    	echo "├─Chrome:  $(tput setaf 2)OK$(tput sgr 0)"
+    else
+        echo "├─Chrome: $(tput setaf 1)NO$(tput sgr 0)"
+        sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O /opt/conejo-blanco/Descargas/google-chrome-stable_current_amd64.deb
+        sudo dpkg -i /opt/conejo-blanco/Descargas/google-chrome-stable_current_amd64.deb
+    fi
+    if [ ! -f /home/$MATERIA/Escritorio/google-chrome.desktop ];
+    then
+        sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace $MATERIA "google-chrome" "google-chrome" "/usr/bin/google-chrome-stable %U"
+    fi
+fi
+killall progreso
