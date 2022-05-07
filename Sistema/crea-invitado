@@ -4,5 +4,5 @@ else
     echo "├ usuario $1: $(tput setaf 1)NO existe$(tput sgr 0)"
     sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_usuario "usuario-invitado" "unahur"
     sudo passwd -d usuario-invitado
-    sudo chmod -v 555 /home/usuario-invitado
+    #sudo chmod -v 555 /home/usuario-invitado
 fi
