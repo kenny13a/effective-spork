@@ -14,6 +14,7 @@ existeuservf "nuevos-entornos"
 existeuservf "objetos-1-noche"
 existeuservf "objetos-1-tarde"
 existeuservf "objetos-2"
+existeuservf "sig"
 pkexec bash /opt/conejo-blanco/effective-spork/Sistema/crea-invitado
 
 
