@@ -16,6 +16,7 @@ existeuservf "objetos-1-tarde"
 existeuservf "objetos-2"
 existeuservf "sig"
 pkexec bash /opt/conejo-blanco/effective-spork/Sistema/crea-invitado
+sudo chmod 755 /opt/conejo-blanco/effective-spork/Sistema/usuarios/sig
 
 
 # martes 10 de septiembre de 2019
