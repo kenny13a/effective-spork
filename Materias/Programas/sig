@@ -1,0 +1,34 @@
+#!/bin/bash
+MATERIA="sig"
+echo -en "\033]0;$MATERIA\a"
+rm -rf /home/$MATERIA/.local/share/Trash/*
+find /home/$MATERIA/Escritorio/* -user $MATERIA -exec rm -rf {} \;
+/usr/bin/progreso &
+echo "Instalaciónd e programas para la materia"
+if [[ $UID != 0 ]]; then
+        echo "No es administrador"
+        exit 1
+else
+    sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/administrador
+    sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/root
+    #### Aca van las cosas
+
+    which qgis >/dev/null
+    if [ "$?" = "0" ]; then
+    	echo "├─QGIS:  $(tput setaf 2)OK$(tput sgr 0)"
+    else
+		sudo apt -y install gnupg software-properties-common
+		wget -qO - https://qgis.org/downloads/qgis-2021.gpg.key | sudo gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/qgis-archive.gpg --import
+		sudo chmod a+r /etc/apt/trusted.gpg.d/qgis-archive.gpg
+		sudo add-apt-repository "deb https://qgis.org/ubuntu $(lsb_release -c -s) main"
+		sudo apt update
+		sudo apt -y install qgis qgis-plugin-grass
+
+    fi
+    if [ ! -f /home/$MATERIA/Escritorio/QGIS.desktop ];
+    then
+        sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace $MATERIA "QGIS" "qgis" "qgis %F"
+    fi
+
+fi
+killall progreso
