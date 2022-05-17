@@ -12,6 +12,7 @@ exit 1
 else
     sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/administrador
     sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/root
+    sudo passwd -d nuevos-entornos
     sudo passwd -d usuario-invitado
     #if [ ! -f /home/$MATERIA/Escritorio/firefox.desktop ];
     #then
