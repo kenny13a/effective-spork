@@ -26,6 +26,7 @@ exit 1
 else
     sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/administrador
     sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/root
+    sudo passwd -d usuario-invitado
     sudo passwd -d nuevos-entornos
     #if [ ! -f /home/$MATERIA/Escritorio/firefox.desktop ];
     #then
@@ -43,8 +44,8 @@ else
     #then
         sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace $MATERIA "google-chrome" "google-chrome" "google-chrome --password-store=basic --incognito http://unahur.edu.ar"
     #fi
-    sudo apt-get update
-    sudo apt-get -y autoremove
+    #sudo apt-get update
+    #sudo apt-get -y autoremove
     sudo apt-get -y upgrade
 fi
 killall progreso
