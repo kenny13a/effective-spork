@@ -29,6 +29,25 @@ else
     then
         sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace $MATERIA "QGIS" "qgis" "qgis %F"
     fi
+    
+    #RStudio
+    which rstudio >/dev/null
+    if [ "$?" = "0" ]; then
+    	echo "├─RStudio:  $(tput setaf 2)OK$(tput sgr 0)"
+    else
+		sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+        sudo add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/'
+        sudo apt-get install -y r-base r-base-dev
+        R --version
+        wget https://download1.rstudio.org/desktop/bionic/amd64/rstudio-2022.02.3-492-amd64.deb  -O /opt/conejo-blanco/Descargas/rstudio.deb
+        sudo dpkg -i /opt/conejo-blanco/Descargas/rstudio.deb 
+        sudo apt --fix-broken install -y
+
+    fi
+    if [ ! -f /home/$MATERIA/Escritorio/RStudio.desktop ];
+    then
+        sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace $MATERIA "RStudio" "rstudio" "rstudio %F"
+    fi
 
 fi
 killall progreso
