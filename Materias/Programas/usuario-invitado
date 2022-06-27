@@ -44,6 +44,35 @@ else
     #then
         sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace $MATERIA "google-chrome" "google-chrome" "google-chrome --password-store=basic --incognito http://unahur.edu.ar"
     #fi
+    
+    if [ -f /home/$MATERIA/Logisim/logisim-generic-2.7.1.jar ];
+    then
+        echo "├─Logisim: $(tput setaf 2)OK$(tput sgr 0)"
+        if [ ! -f /home/$MATERIA/Escritorio/logisim.desktop ];
+        then
+            sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "logisim" "/home/org-comp/Logisim/Logisim-icon.png" "/usr/lib/jvm/java-8-openjdk-amd64/bin/java -jar /home/$MATERIA/Logisim/logisim-generic-2.7.1.jar" 
+        fi
+        if [ ! -f /home/$MATERIA/Logisim/Logisim-icon.png ];
+        then
+            wget https://www.dropbox.com/s/fwl7h6g5avnfven/Logisim-icon.png -O /home/$MATERIA/Logisim/Logisim-icon.png
+            sudo chmod 555 /home/$MATERIA/Logisim/Logisim-icon.png
+            sudo chmod 755 /home/$MATERIA/Logisim/logisim-generic-2.7.1.jar
+        fi
+    else
+        echo "├─Logisim: $(tput setaf 1)NO$(tput sgr 0)"
+   	    if [ ! -d /home/$MATERIA/Logisim/ ];
+            then
+                sudo mkdir /home/$MATERIA/Logisim
+                sudo chown $MATERIA /home/$MATERIA/Logisim
+                sudo chgrp $MATERIA /home/$MATERIA/Logisim
+        fi 
+        wget https://razaoinfo.dl.sourceforge.net/project/circuit/2.7.x/2.7.1/logisim-generic-2.7.1.jar -O /home/$MATERIA/Logisim/logisim-generic-2.7.1.jar
+        sudo chmod 755 /home/$MATERIA/Logisim/logisim-generic-2.7.1.jar
+        wget https://www.dropbox.com/s/fwl7h6g5avnfven/Logisim-icon.png -O /home/$MATERIA/Logisim/Logisim-icon.png
+        sudo chmod 555 /home/$MATERIA/Logisim/Logisim-icon.png
+        sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "logisim" "/home/org-comp/Logisim/Logisim-icon.png" "/usr/lib/jvm/java-8-openjdk-amd64/bin/java -jar /home/$MATERIA/Logisim/logisim-generic-2.7.1.jar"
+    fi
+    
     #sudo apt-get update
     #sudo apt-get -y autoremove
     sudo apt-get -y upgrade
