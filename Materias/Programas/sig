@@ -49,6 +49,7 @@ else
     then
         sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace $MATERIA "RStudio" "rstudio" "rstudio %F"
     fi
-
+    sudo R CMD javareconf
+    
 fi
 killall progreso
