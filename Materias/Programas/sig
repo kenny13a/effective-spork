@@ -42,6 +42,7 @@ else
         wget https://download1.rstudio.org/desktop/bionic/amd64/rstudio-2022.02.3-492-amd64.deb  -O /opt/conejo-blanco/Descargas/rstudio.deb
         sudo dpkg -i /opt/conejo-blanco/Descargas/rstudio.deb 
         sudo apt --fix-broken install -y
+	sudo R CMD javareconf
 
     fi
     if [ ! -f /home/$MATERIA/Escritorio/RStudio.desktop ];
