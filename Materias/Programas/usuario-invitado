@@ -50,7 +50,7 @@ else
         echo "├─Logisim: $(tput setaf 2)OK$(tput sgr 0)"
         if [ ! -f /home/$MATERIA/Escritorio/logisim.desktop ];
         then
-            sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "logisim" "/home/org-comp/Logisim/Logisim-icon.png" "/usr/lib/jvm/java-8-openjdk-amd64/bin/java -jar /home/$MATERIA/Logisim/logisim-generic-2.7.1.jar" 
+            sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "logisim" "/home/$MATERIA/Logisim/Logisim-icon.png" "/usr/lib/jvm/java-8-openjdk-amd64/bin/java -jar /home/$MATERIA/Logisim/logisim-generic-2.7.1.jar" 
         fi
         if [ ! -f /home/$MATERIA/Logisim/Logisim-icon.png ];
         then
