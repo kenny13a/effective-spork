@@ -17,6 +17,8 @@ existeuservf "objetos-1-tarde"
 existeuservf "objetos-2"
 sudo chmod 755 /opt/conejo-blanco/effective-spork/Sistema/usuarios/sig
 existeuservf "sig"
+sudo chmod 755 /opt/conejo-blanco/effective-spork/Sistema/usuarios/martin-vernengo
+existeuservf "martin-vernengo"
 pkexec bash /opt/conejo-blanco/effective-spork/Sistema/crea-invitado
 
 # martes 10 de septiembre de 2019
