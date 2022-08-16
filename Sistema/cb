@@ -1,5 +1,5 @@
 #!/bin/bash
-VERSION="1.11.11"
+VERSION="3.08.16"
 # nombre de terminal
 echo -en "\033]0;Conejo-Blanco\a"
 #Opciones
@@ -29,7 +29,11 @@ while getopts "aheu:vd" OPTION; do
                 d)
                         pkexec bash /opt/conejo-blanco/effective-spork/Sistema/vDesc
                         exit 0
-                        ;;                     
+                        ;;        
+                x)
+                        pkexec bash /opt/conejo-blanco/effective-spork/Sistema/Apagame
+                        exit 0
+                        ;;     
         esac
 done
 #verifica sudo
