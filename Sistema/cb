@@ -3,7 +3,7 @@ VERSION="3.08.16"
 # nombre de terminal
 echo -en "\033]0;Conejo-Blanco\a"
 #Opciones
-while getopts "aheu:vd" OPTION; do
+while getopts "aheu:vdx" OPTION; do
         case $OPTION in
 
                 e)
