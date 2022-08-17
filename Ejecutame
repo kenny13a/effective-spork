@@ -14,6 +14,7 @@ existeuservf "nuevos-entornos"
 sudo passwd -d nuevos-entornos
 existeuservf "objetos-1-noche"
 existeuservf "objetos-1-tarde"
+existeuservf "bioinformatica"
 existeuservf "objetos-2"
 sudo chmod 755 /opt/conejo-blanco/effective-spork/Sistema/usuarios/sig
 existeuservf "sig"
