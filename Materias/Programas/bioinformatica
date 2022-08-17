@@ -12,5 +12,22 @@ exit 1
 else
     sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/administrador
     sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/root
+    if [ ! -f /home/$MATERIA/Escritorio/firefox.desktop ];
+    then
+        sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace $MATERIA "firefox" "firefox" "firefox --private-window http://unahur.edu.ar"
+    fi
+    which google-chrome-stable >/dev/null
+    if [ "$?" = "0" ]; then
+    	echo "├─Chrome:  $(tput setaf 2)OK$(tput sgr 0)"
+    else
+        echo "├─Chrome: $(tput setaf 1)NO$(tput sgr 0)"
+        sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O /opt/conejo-blanco/Descargas/google-chrome-stable_current_amd64.deb
+        sudo dpkg -i /opt/conejo-blanco/Descargas/google-chrome-stable_current_amd64.deb
+    fi
+    if [ ! -f /home/$MATERIA/Escritorio/google-chrome.desktop ];
+    then
+        sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace $MATERIA "google-chrome" "google-chrome" "google-chrome --password-store=basic --incognito http://unahur.edu.ar"
+    fi
+    
 fi
 killall progreso
