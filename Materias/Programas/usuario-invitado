@@ -72,7 +72,10 @@ else
         sudo chmod 555 /home/$MATERIA/Logisim/Logisim-icon.png
         sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "logisim" "/home/$MATERIA/Logisim/Logisim-icon.png" "/usr/lib/jvm/java-8-openjdk-amd64/bin/java -jar /home/$MATERIA/Logisim/logisim-generic-2.7.1.jar"
     fi
-    
+    if [ ! -f /home/$MATERIA/Escritorio/Apagar.desktop ];
+    then
+        sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace $MATERIA "Apagar" "system-shutdown" "conejo-blanco -x"
+    fi
     #sudo apt-get update
     #sudo apt-get -y autoremove
     sudo apt-get -y upgrade
