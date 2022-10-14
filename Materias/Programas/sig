@@ -18,9 +18,18 @@ else
     	echo "├─QGIS:  $(tput setaf 2)OK$(tput sgr 0)"
     else
 		sudo apt -y install gnupg software-properties-common
-		wget -qO - https://qgis.org/downloads/qgis-2021.gpg.key | sudo gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/qgis-archive.gpg --import
-		sudo chmod a+r /etc/apt/trusted.gpg.d/qgis-archive.gpg
-		sudo add-apt-repository "deb https://qgis.org/ubuntu $(lsb_release -c -s) main"
+#		wget -qO - https://qgis.org/downloads/qgis-2021.gpg.key | sudo gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/qgis-archive.gpg --import
+#		sudo chmod a+r /etc/apt/trusted.gpg.d/qgis-archive.gpg
+        sudo mkdir -m755 -p /etc/apt/keyrings  # not needed since apt version 2.4.0 like Debian 12 and Ubuntu 22 or newer
+        sudo wget -O /etc/apt/keyrings/qgis-archive-keyring.gpg https://download.qgis.org/downloads/qgis-archive-keyring.gpg
+#		sudo add-apt-repository "deb https://qgis.org/ubuntu $(lsb_release -c -s) main"
+        echo 'Types: deb deb-src' >> /etc/apt/sources.list.d/qgis.sources
+        echo 'URIs: https://qgis.org/debian' >> /etc/apt/sources.list.d/qgis.sources
+        echo 'Suites: bullseye' >> /etc/apt/sources.list.d/qgis.sources
+        echo 'Architectures: amd64' >> /etc/apt/sources.list.d/qgis.sources
+        echo 'Components: main' >> /etc/apt/sources.list.d/qgis.sources
+        echo 'Signed-By: /etc/apt/keyrings/qgis-archive-keyring.gpg' >> /etc/apt/sources.list.d/qgis.sources
+
 		sudo apt update
 		sudo apt -y install qgis qgis-plugin-grass
 
