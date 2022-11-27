@@ -76,8 +76,9 @@ else
     then
         sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace $MATERIA "Apagar" "system-shutdown" "conejo-blanco -x"
     fi
-    #sudo apt-get update
-    #sudo apt-get -y autoremove
+    sudo apt-get update
+    sudo apt-get -y autoremove
     sudo apt-get -y upgrade
+    sudo apt-get -y install gimp
 fi
 killall progreso
