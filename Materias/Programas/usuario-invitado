@@ -28,6 +28,7 @@ else
     sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/root
     sudo passwd -d usuario-invitado
     sudo passwd -d nuevos-entornos
+    sudo passwd -d martin-vernengo
     #if [ ! -f /home/$MATERIA/Escritorio/firefox.desktop ];
     #then
         sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace $MATERIA "firefox" "firefox" "firefox --private-window http://unahur.edu.ar"
