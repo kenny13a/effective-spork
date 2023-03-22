@@ -55,7 +55,8 @@ sudo chmod 755 /usr/bin/del-guest-sesions
 
 descargar_logosvf
 crea_autoejecutablevf logo "gsettings set org.mate.background picture-filename '/usr/share/backgrounds/Logo.jpg'"
-crea_autoejecutablevf paneles "mate-panel --reset"
+//crea_autoejecutablevf paneles "mate-panel --reset"
+crea_autoejecutablevf paneles "mate-panel --replace"
 crea_autoejecutablevf interfaz "gsettings reset-recursively org.mate.interface"
 crea_autoejecutablevf marquitos "gsettings reset-recursively org.mate.Marco"
 sudo rm /etc/xdg/autostart/protector.desktop
