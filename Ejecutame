@@ -54,7 +54,13 @@ sudo chmod 755 /usr/bin/del-guest-sesions
 
 
 descargar_logosvf
-crea_autoejecutablevf logo "gsettings set org.mate.background picture-filename '/usr/share/backgrounds/Logo.jpg'"
+//crea_autoejecutablevf logo "gsettings set org.mate.background picture-filename '/usr/share/backgrounds/Logo.jpg'"
+ if [ ! -f /usr/share/backgrounds/fondo-a1.png ];
+    then
+        crea_autoejecutablevf logo "gsettings set org.mate.background picture-filename '/usr/share/backgrounds/Logo.jpg'"
+    else
+        crea_autoejecutablevf logo "gsettings set org.mate.background picture-filename '/usr/share/backgrounds/fondo-a1.png'"
+    fi
 //crea_autoejecutablevf paneles "mate-panel --reset"
 crea_autoejecutablevf paneles "mate-panel --replace"
 crea_autoejecutablevf interfaz "gsettings reset-recursively org.mate.interface"
