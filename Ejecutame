@@ -21,6 +21,8 @@ existeuservf "sig"
 sudo chmod 755 /opt/conejo-blanco/effective-spork/Sistema/usuarios/martin-vernengo
 existeuservf "martin-vernengo"
 pkexec bash /opt/conejo-blanco/effective-spork/Sistema/crea-invitado
+sudo chmod 755 /opt/conejo-blanco/effective-spork/Sistema/usuarios/concurrente
+existeuservf "concurrente"
 
 # martes 10 de septiembre de 2019
 # notify-send 'ATENCION' 'A partir de ahora cualquier archivo personal debe ir en Documentos de la carpeta personal' -u normal -i 'conejo-blanco' -t 10000
