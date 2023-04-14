@@ -31,14 +31,14 @@ else
 	    sudo apt install openjdk-11-jre-headless
 		#echo 2 | sudo update-alternatives --config java
 	    sudo snap install intellij-idea-community --classic
-        sudo cp /snap/intellij-idea-community/323/bin/idea.png /snap/idea.png
-	    sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "IDEA" "/snap/idea.png" "intellij-idea-community"
+        sudo cp /snap/intellij-idea-community/427/bin/idea.png /snap/idea.png
+	    sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "IDEA" "/snap/intellij-idea-community/427/bin/idea.png" "intellij-idea-community"
     fi
     echo "└────────────────────────╸"
     if [ ! -f /home/$MATERIA/Escritorio/IDEA.desktop ];
     then
     	sudo cp /snap/intellij-idea-community/323/bin/idea.png /snap/idea.png
-        sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "IDEA" "/snap/idea.png" "intellij-idea-community"
+        sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "IDEA" "/snap/intellij-idea-community/427/bin/idea.png" "intellij-idea-community"
     fi
 
 fi
