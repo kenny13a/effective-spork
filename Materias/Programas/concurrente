@@ -14,19 +14,6 @@ else
     #sudo adduser $MATERIA sudo
     #### Aca van las cosas
     mkdir -p /home/$MATERIA/.config/autostart
-    if [ ! -f /home/$MATERIA/.config/autostart/NVM.desktop ];
-    then
-        wget https://raw.githubusercontent.com/creationix/nvm/v0.35.2/install.sh -O /home/$MATERIA/install.sh
-        echo "[Desktop Entry]" >> /home/$MATERIA/.config/autostart/NVM.desktop
-        echo "Type=Application" >> /home/$MATERIA/.config/autostart/NVM.desktop
-        echo "Exec=bash /home/$MATERIA/install.sh" >> /home/$MATERIA/.config/autostart/NVM.desktop
-        echo "Hidden=false" >> /home/$MATERIA/.config/autostart/NVM.desktop
-        echo "X-MATE-Autostart-enabled=true" >> /home/$MATERIA/.config/autostart/NVM.desktop
-        echo "Name[es_AR]=NVM" >> /home/$MATERIA/.config/autostart/NVM.desktop
-        echo "Name=NVM" >> /home/$MATERIA/.config/autostart/NVM.desktop
-        echo "Comment[es_AR]=" >> /home/$MATERIA/.config/autostart/NVM.desktop
-        echo "Comment=" >> /home/$MATERIA/.config/autostart/NVM.desktop
-    fi
     which python3 >/dev/null
     if [ "$?" = "0" ]; then
 	    echo "├─Python3:  $(tput setaf 2)OK$(tput sgr 0)"
@@ -34,22 +21,25 @@ else
         echo "├─Python3: $(tput setaf 1)NO$(tput sgr 0)"
         sudo apt-get -y install python3
     fi
-    which code >/dev/null
-    if [ "$?" = "0" ]; then
-	    echo "├─Code Studio:  $(tput setaf 2)OK$(tput sgr 0)"
-        if [ ! -f /home/$MATERIA/Escritorio/code.desktop ];
-        then
-            sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "code" "com.visualstudio.code" "/usr/share/code/code --unity-launch %F"
-        fi
-    else
-        echo "├─Code Studio: $(tput setaf 1)NO$(tput sgr 0)"
-        if [ ! -f /opt/conejo-blanco/Descargas/code_1.35.1-1560350270_amd64.deb ];
-        then
-            sudo wget https://az764295.vo.msecnd.net/stable/c7d83e57cd18f18026a8162d042843bda1bcf21f/code_1.35.1-1560350270_amd64.deb -O /opt/conejo-blanco/Descargas/code_1.35.1-1560350270_amd64.deb
-        fi
-        sudo dpkg -i /opt/conejo-blanco/Descargas/code_1.35.1-1560350270_amd64.deb
-        sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "code" "com.visualstudio.code" "/usr/share/code/code --unity-launch %F"
-    fi
     sudo apt-get -y install python3-pip
+    which intellij-idea-community >/dev/null
+    if [ "$?" = "0" ];
+    then
+        echo "├─IDEA: $(tput setaf 2)OK$(tput sgr 0)"
+    else
+        echo "├─IDEA: $(tput setaf 1)NO$(tput sgr 0)"
+	    sudo apt install openjdk-11-jre-headless
+		#echo 2 | sudo update-alternatives --config java
+	    sudo snap install intellij-idea-community --classic
+        sudo cp /snap/intellij-idea-community/323/bin/idea.png /snap/idea.png
+	    sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "IDEA" "/snap/idea.png" "intellij-idea-community"
+    fi
+    echo "└────────────────────────╸"
+    if [ ! -f /home/$MATERIA/Escritorio/IDEA.desktop ];
+    then
+    	sudo cp /snap/intellij-idea-community/323/bin/idea.png /snap/idea.png
+        sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "IDEA" "/snap/idea.png" "intellij-idea-community"
+    fi
+
 fi
 killall progreso
