@@ -17,8 +17,10 @@ else
     if [ "$?" = "0" ]; then
     	echo "├─QGIS:  $(tput setaf 2)OK$(tput sgr 0)"
     else
+		sudo rm /etc/apt/sources.list.d/qgis.sources
+		sudo apt-get update
 		sudo apt-get -y install gnupg software-properties-common
-		sudo apt -y install qgis qgis-plugin-grass
+		sudo apt-get -y install qgis
 
     fi
     if [ ! -f /home/$MATERIA/Escritorio/QGIS.desktop ];
