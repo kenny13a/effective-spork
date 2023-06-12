@@ -81,5 +81,6 @@ else
     sudo apt-get -y autoremove
     sudo apt-get -y upgrade
     sudo apt-get -y install gimp
+    sudo dpkg --configure -a
 fi
 killall progreso
