@@ -31,7 +31,7 @@ else
     sudo passwd -d martin-vernengo
     #if [ ! -f /home/$MATERIA/Escritorio/firefox.desktop ];
     #then
-        sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace $MATERIA "firefox" "firefox" "firefox --private-window http://unahur.edu.ar"
+        sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace $MATERIA "/snap/firefox/2710/default256.png" "firefox" "firefox --private-window http://unahur.edu.ar"
     #fi
     which google-chrome-stable >/dev/null
     if [ "$?" = "0" ]; then
