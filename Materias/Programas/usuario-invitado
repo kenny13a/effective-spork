@@ -1,5 +1,6 @@
 #!/bin/bash
 source /opt/conejo-blanco/effective-spork/utiles.sh
+idioma-carpetas
 limpiar () {
     if [ -d /home/$1/Descargas/ ];
        then
@@ -88,7 +89,7 @@ if [ ! -f /home/$MATERIA/Escritorio/Apagar.desktop ];
     sudo apt-get -y install gimp
     sudo dpkg --configure -a
 fi
-prueba
-idioma-carpetas
-echo $MUSICA
+
+rm  !($ESCRITORIO|$DOCUMENTOS|$DESCARGAS|$MUSICA|$IMAGENES|$PUBLICO|$PLANTILLAS|$VIDEOS|snap|Logisim) 
+
 killall progreso
