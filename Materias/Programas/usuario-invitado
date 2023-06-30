@@ -89,4 +89,5 @@ if [ ! -f /home/$MATERIA/Escritorio/Apagar.desktop ];
     sudo dpkg --configure -a
 fi
 prueba
+echo $MUSICA
 killall progreso
