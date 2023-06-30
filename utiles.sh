@@ -171,8 +171,8 @@ limpiar-carpetas() {
     shopt -s extglob
     rm -rf /home/$1/!($ESCRITORIO|$DOCUMENTOS|$DESCARGAS|$MUSICA|$IMAGENES|$PUBLICO|$PLANTILLAS|$VIDEOS|snap|Logisim)
     shopt -u extglob    
-    if [ -d /home/$1/$DESCARGAS/ ];
-       then
+ #   if [ -d /home/$1/$DESCARGAS/ ];
+  #     then
             rm -rf /home/$1/$DESCARGAS/*
             rm -rf /home/$1/$DOCUMENTOS/*
             rm -rf /home/$1/$IMAGENES/*
@@ -180,7 +180,7 @@ limpiar-carpetas() {
             rm -rf /home/$1/$MUSICA/*
             rm -rf /home/$1/$PUBLICO/*
             rm -rf /home/$1/$PLANTILLAS/*
-    fi
+  #  fi
     if [ -d /home/$1/Logisim/ ];
        then
         shopt -s extglob
