@@ -1,5 +1,5 @@
 #!/bin/bash
-
+source /opt/conejo-blanco/effective-spork/utiles.sh
 limpiar () {
     if [ -d /home/$1/Descargas/ ];
        then
