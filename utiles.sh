@@ -141,3 +141,26 @@ fi
 function elusuario(){
 	sudo userdel -r $1
 }
+
+idioma-carpetas() {
+    if [[$LANG == *"en"* ]];
+    then
+        ESCRITORIO="Desktop"
+        DOCUMENTOS="Documents"
+        DESCARGAS="Downloads"
+        MUSICA="Music"
+        IMAGENES="Pictures"
+        PUBLICO="Public"
+        PLANTILLAS="Templates"
+        VIDEOS="Videos"
+    else
+        ESCRITORIO="Escritorio"
+        DOCUMENTOS="Documentos"
+        DESCARGAS="Descargas"
+        MUSICA="Música"
+        IMAGENES="Imágenes"
+        PUBLICO="Público"
+        PLANTILLAS="Plantillas"
+        VIDEOS="Vídeos"
+    fi
+}
