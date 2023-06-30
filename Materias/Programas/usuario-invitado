@@ -89,7 +89,6 @@ if [ ! -f /home/$MATERIA/Escritorio/Apagar.desktop ];
     sudo apt-get -y install gimp
     sudo dpkg --configure -a
 fi
-
-rm  !($ESCRITORIO|$DOCUMENTOS|$DESCARGAS|$MUSICA|$IMAGENES|$PUBLICO|$PLANTILLAS|$VIDEOS|snap|Logisim) 
-
+cd /home/$MATERIA
+rm  !($ESCRITORIO|$DOCUMENTOS|$DESCARGAS|$MUSICA|$IMAGENES|$PUBLICO|$PLANTILLAS|$VIDEOS|snap|Logisim)
 killall progreso
