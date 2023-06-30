@@ -164,3 +164,27 @@ idioma-carpetas() {
         VIDEOS="Vídeos"
     fi
 }
+
+limpiar-carpetas () {
+    idioma-carpetas    
+    shopt -s extglob
+    rm -rf /home/$MATERIA/!($ESCRITORIO|$DOCUMENTOS|$DESCARGAS|$MUSICA|$IMAGENES|$PUBLICO|$PLANTILLAS|$VIDEOS|snap|Logisim)
+    shopt -u extglob    
+    if [ -d /home/$1/$DESCARGAS/ ];
+       then
+            echo "Limpiando $1 2020"
+            rm -rf /home/$1/$DESCARGAS/*
+            rm -rf /home/$1/$DOCUMENTOS/*
+            rm -rf /home/$1/$IMAGENES/*
+            rm -rf /home/$1/$VIDEOS/*
+            rm -rf /home/$1/$MUSICA/*
+            rm -rf /home/$1/$PUBLICO/*
+            rm -rf /home/$1/$PLANTILLAS/*
+    fi
+    if [ -d /home/$1/Logisim/ ];
+       then
+        shopt -s extglob
+        rm -rf /home/$1/Logisim/!(logisim-generic-2.7.1.jar|Logisim-icon.png)
+        shopt -u extglob
+    fi
+}
