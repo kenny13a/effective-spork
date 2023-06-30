@@ -89,5 +89,6 @@ if [ ! -f /home/$MATERIA/Escritorio/Apagar.desktop ];
     sudo dpkg --configure -a
 fi
 prueba
+idioma-carpetas
 echo $MUSICA
 killall progreso
