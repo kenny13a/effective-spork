@@ -166,13 +166,13 @@ idioma-carpetas() {
 }
 
 limpiar-carpetas () {
-    idioma-carpetas    
+    idioma-carpetas
+    rm -rf /home/$1/.local/share/Trash/*
     shopt -s extglob
-    rm -rf /home/$MATERIA/!($ESCRITORIO|$DOCUMENTOS|$DESCARGAS|$MUSICA|$IMAGENES|$PUBLICO|$PLANTILLAS|$VIDEOS|snap|Logisim)
+    rm -rf /home/$1/!($ESCRITORIO|$DOCUMENTOS|$DESCARGAS|$MUSICA|$IMAGENES|$PUBLICO|$PLANTILLAS|$VIDEOS|snap|Logisim)
     shopt -u extglob    
     if [ -d /home/$1/$DESCARGAS/ ];
        then
-            echo "Limpiando $1 2020"
             rm -rf /home/$1/$DESCARGAS/*
             rm -rf /home/$1/$DOCUMENTOS/*
             rm -rf /home/$1/$IMAGENES/*
