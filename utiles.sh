@@ -143,7 +143,7 @@ function elusuario(){
 }
 
 idioma-carpetas() {
-    if [[$LANG == *"en"* ]];
+    if [[ $LANG == *"en"* ]];
     then
         ESCRITORIO="Desktop"
         DOCUMENTOS="Documents"
