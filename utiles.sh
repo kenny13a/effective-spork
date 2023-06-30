@@ -165,7 +165,7 @@ idioma-carpetas() {
     fi
 }
 
-limpiar-carpetas () {
+limpiar-carpetas() {
     idioma-carpetas
     rm -rf /home/$1/.local/share/Trash/*
     shopt -s extglob
