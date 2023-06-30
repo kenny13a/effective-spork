@@ -187,4 +187,8 @@ limpiar-carpetas() {
         rm -rf /home/$1/Logisim/!(logisim-generic-2.7.1.jar|Logisim-icon.png)
         shopt -u extglob
     fi
+    if [ -d /home/$1/Logisim/ ];
+       then
+    	find /home/$1/$ESCRITORIO/* -user $1 -exec rm -rf {} \;
+    fi
 }
