@@ -1,4 +1,6 @@
 #!/bin/bash
+source /opt/conejo-blanco/effective-spork/utiles.sh
+idioma-carpetas
 echo "Credor de enlaces"
 if [ -z "$1" ] && [ -z "$2" ]
     then
@@ -7,27 +9,27 @@ if [ -z "$1" ] && [ -z "$2" ]
         #                           $1          $2       $3      $4
     else
         echo "crear enlace a $2"
-   	        if [ ! -d /home/$1/Escritorio/ ];
+   	        if [ ! -d /home/$1/$ESCRITORIO/ ];
             then
-                sudo mkdir /home/$1/Escritorio
-                sudo chown $1 /home/$1/Escritorio
-                sudo chgrp $1 /home/$1/Escritorio
+                sudo mkdir /home/$1/$ESCRITORIO
+                sudo chown $1 /home/$1/$ESCRITORIO
+                sudo chgrp $1 /home/$1/$ESCRITORIO
             fi
-        if [ -f /home/$1/Escritorio/$2.desktop ];
+        if [ -f /home/$1/$ESCRITORIO/$2.desktop ];
        	    then
-                sudo rm /home/$1/Escritorio/$2.desktop
+                sudo rm /home/$1/$ESCRITORIO/$2.desktop
         fi
         ## INICIO del archivo .desktop
-        sudo echo "#!/usr/bin/env xdg-open" >> /home/$1/Escritorio/$2.desktop
-        sudo echo "[Desktop Entry]" >> /home/$1/Escritorio/$2.desktop
-        sudo echo "Version=1.0" >> /home/$1/Escritorio/$2.desktop
-        sudo echo "Type=Application" >> /home/$1/Escritorio/$2.desktop
-        sudo echo "Terminal=false" >> /home/$1/Escritorio/$2.desktop
-        sudo echo "Icon=$3" >> /home/$1/Escritorio/$2.desktop
-        sudo echo "Exec=$4" >> /home/$1/Escritorio/$2.desktop
-        sudo echo "Name[es_AR]=$2" >> /home/$1/Escritorio/$2.desktop
-        sudo echo "Name=$2" >> /home/$1/Escritorio/$2.desktop
+        sudo echo "#!/usr/bin/env xdg-open" >> /home/$1/$ESCRITORIO/$2.desktop
+        sudo echo "[Desktop Entry]" >> /home/$1/$ESCRITORIO/$2.desktop
+        sudo echo "Version=1.0" >> /home/$1/$ESCRITORIO/$2.desktop
+        sudo echo "Type=Application" >> /home/$1/$ESCRITORIO/$2.desktop
+        sudo echo "Terminal=false" >> /home/$1/$ESCRITORIO/$2.desktop
+        sudo echo "Icon=$3" >> /home/$1/$ESCRITORIO/$2.desktop
+        sudo echo "Exec=$4" >> /home/$1/$ESCRITORIO/$2.desktop
+        sudo echo "Name[es_AR]=$2" >> /home/$1/$ESCRITORIO/$2.desktop
+        sudo echo "Name=$2" >> /home/$1/$ESCRITORIO/$2.desktop
         ## fin del archivo .desktop
-        sudo chmod 755 /home/$1/Escritorio/$2.desktop
+        sudo chmod 755 /home/$1/$ESCRITORIO/$2.desktop
         echo "Acceso directo de $2 copiado al escritorio de $1"
 fi
