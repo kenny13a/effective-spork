@@ -17,9 +17,9 @@ else
     sudo passwd -d usuario-invitado
     sudo passwd -d nuevos-entornos
     sudo passwd -d martin-vernengo
-    #if [ ! -f /home/$MATERIA/Escritorio/firefox.desktop ];
+    #if [ ! -f /home/$MATERIA/$ESCRITORIO/firefox.desktop ];
     #then
-        sudo rm /home/usuario-invitado/Escritorio/firefox.desktop
+        sudo rm /home/usuario-invitado/$ESCRITORIO/firefox.desktop
         sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace $MATERIA "FireFox" "/snap/firefox/2710/default256.png" "firefox --private-window http://unahur.edu.ar"
     #fi
     which google-chrome-stable >/dev/null
@@ -38,7 +38,7 @@ else
     if [ -f /home/$MATERIA/Logisim/logisim-generic-2.7.1.jar ];
     then
         echo "├─Logisim: $(tput setaf 2)OK$(tput sgr 0)"
-        if [ ! -f /home/$MATERIA/Escritorio/logisim.desktop ];
+        if [ ! -f /home/$MATERIA/$ESCRITORIO/logisim.desktop ];
         then
             #sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "logisim" "/home/$MATERIA/Logisim/Logisim-icon.png" "/usr/lib/jvm/java-8-openjdk-amd64/bin/java -jar /home/$MATERIA/Logisim/logisim-generic-2.7.1.jar" 
             sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "logisim" "/home/$MATERIA/Logisim/Logisim-icon.png" "java -jar /home/$MATERIA/Logisim/logisim-generic-2.7.1.jar"
@@ -64,9 +64,9 @@ else
         #sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "logisim" "/home/$MATERIA/Logisim/Logisim-icon.png" "/usr/lib/jvm/java-8-openjdk-amd64/bin/java -jar /home/$MATERIA/Logisim/logisim-generic-2.7.1.jar"
         sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "logisim" "/home/$MATERIA/Logisim/Logisim-icon.png" "java -jar /home/$MATERIA/Logisim/logisim-generic-2.7.1.jar"
     fi
-sudo rm /home/$MATERIA/Escritorio/logisim.desktop
+sudo rm /home/$MATERIA/$ESCRITORIO/logisim.desktop
 sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "logisim" "/home/$MATERIA/Logisim/Logisim-icon.png" "java -jar /home/$MATERIA/Logisim/logisim-generic-2.7.1.jar"    
-if [ ! -f /home/$MATERIA/Escritorio/Apagar.desktop ];
+if [ ! -f /home/$MATERIA/$ESCRITORIO/Apagar.desktop ];
     then
         sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace $MATERIA "Apagar" "system-shutdown" "conejo-blanco -x"
     fi
