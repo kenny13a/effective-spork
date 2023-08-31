@@ -66,7 +66,9 @@ else
         sudo dpkg -i /opt/conejo-blanco/Descargas/code_1.35.1-1560350270_amd64.deb
         sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "code" "com.visualstudio.code" "/usr/share/code/code --unity-launch %F"
     fi 
+#modificar para hacerlo mejor
 sudo snap install --classic eclipse
+sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "eclipse" "/snap/eclipse/67/icon.xpm" "env BAMF_DESKTOP_FILE_HINT=/var/lib/snapd/desktop/applications/eclipse_eclipse.desktop /snap/bin/eclipse %f"
     
 fi
 killall progreso
