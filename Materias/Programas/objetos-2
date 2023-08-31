@@ -65,7 +65,8 @@ else
         fi
         sudo dpkg -i /opt/conejo-blanco/Descargas/code_1.35.1-1560350270_amd64.deb
         sudo bash /opt/conejo-blanco/effective-spork/Sistema/utilitarios/crea_enlace "$MATERIA" "code" "com.visualstudio.code" "/usr/share/code/code --unity-launch %F"
-    fi    
+    fi 
+sudo snap install --classic eclipse
     
 fi
 killall progreso
