@@ -10,6 +10,7 @@ source /opt/conejo-blanco/effective-spork/utiles.sh
 
 #sudo /opt/conejo-blanco/effective-spork/Sistema/usuarios/administrador
 # chequeo y creacion de usuarios
+existeuservf "redes"
 existeuservf "nuevos-entornos"
 sudo passwd -d nuevos-entornos
 existeuservf "objetos-1-noche"
